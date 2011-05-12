@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<application xmlns="http://ns.adobe.com/air/application/2.6">
+	
+	<id>jp.ractius.ustrplite</id> 
+	<versionNumber>3.00.0</versionNumber> 
+	<filename>UstrPLite</filename> 
+	
+	<name>UstrPLite 3</name> 
+	<description>A standalone player for live streaming.</description> 
+	<copyright>Copyright (c) 2009-2011 Ractis</copyright> 
+	
+	<initialWindow> 
+		<title>UstrPLite 3</title> 
+		<content>bin/UstrPLite.swf</content> 
+		<systemChrome>standard</systemChrome> 
+		<transparent>false</transparent> 
+		<visible>true</visible> 
+		<minimizable>true</minimizable> 
+		<maximizable>false</maximizable> 
+		<resizable>true</resizable> 
+	</initialWindow> 
+	
+	<!-- 
+	More options:
+	http://livedocs.adobe.com/flex/3/html/File_formats_1.html#1043413
+	-->
+</application>
