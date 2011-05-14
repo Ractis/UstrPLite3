@@ -12,7 +12,7 @@
 	<initialWindow> 
 		<title>UstrPLite 3</title> 
 		<content>bin/UstrPLite.swf</content> 
-		<systemChrome>standard</systemChrome> 
+		<systemChrome>none</systemChrome> 
 		<transparent>false</transparent> 
 		<visible>true</visible> 
 		<minimizable>true</minimizable> 

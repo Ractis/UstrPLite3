@@ -1,0 +1,2 @@
+Justin.tv のみ、指定のドメイン上の Web サーバーに配置しなければならないので、
+AIR パッケージ内（Release/UstrPLite3/）にはコピーしません。

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+<results>
+	<id>381089</id>
+	<user>
+		<id>708489</id>
+		<userName><![CDATA[Ractis]]></userName>
+		<url><![CDATA[http://www.ustream.tv/user/Ractis]]></url>
+	</user>
+	<title><![CDATA[RactisTV]]></title>
+	<description><![CDATA[気が向いた時にゲーム配信]]></description>
+	<urlTitleName><![CDATA[ractistv]]></urlTitleName>
+	<url><![CDATA[http://www.ustream.tv/channel/ractistv]]></url>
+	<status><![CDATA[offline]]></status>
+	<createdAt><![CDATA[2008-11-30 08:49:18]]></createdAt>
+	<lastStreamedAt><![CDATA[2010-06-29 10:53:19]]></lastStreamedAt>
+	<imageUrl>
+		<small><![CDATA[http://static-cdn1.ustream.tv/schannel_picture/3/8/1/0/381089/th/smalls2_120_381089___.jpg]]></small>
+		<medium><![CDATA[http://static-cdn1.ustream.tv/schannel_picture/3/8/1/0/381089/th/mediums2_240_381089___.jpg]]></medium>
+	</imageUrl>
+	<rating>0.000</rating>
+	<embedTag><![CDATA[<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="320" height="260" id="utv186104"><param name="flashvars" value="autoplay=false&brand=embed&cid=381089"/><param name="allowfullscreen" value="true"/><param name="allowscriptaccess" value="always"/><param name="movie" value="http://www.ustream.tv/flash/viewer.swf"/><embed flashvars="autoplay=false&brand=embed&cid=381089" width="320" height="260" allowfullscreen="true" allowscriptaccess="always" id="utv186104" name="utv_n_497448" src="http://www.ustream.tv/flash/viewer.swf" type="application/x-shockwave-flash" /></object>]]></embedTag>
+	<embedTagSourceUrl><![CDATA[http://www.ustream.tv/flash/live/1/381089]]></embedTagSourceUrl>
+	<hasTags>TRUE</hasTags>
+	<numberOf>
+		<comments>0</comments>
+		<ratings>0</ratings>
+		<favorites>0</favorites>
+		<views>93</views>
+		<tags>3</tags>
+	</numberOf>
+	<tags>
+		<array key="0"><![CDATA[game]]></array>
+		<array key="1"><![CDATA[stg]]></array>
+		<array key="2"><![CDATA[test]]></array>
+	</tags>
+	<socialStream>
+		<hashtag><![CDATA[@ractius]]></hashtag>
+	</socialStream>
+	<chat>
+		<embedTag><![CDATA[<embed width="563" height="266" type="application/x-shockwave-flash" flashvars="brandId=1&channelId=381089&locale=en_US" pluginspage="http://www.adobe.com/go/getflashplayer" src="http://www.ustream.tv/flash/irc.swf" allowfullscreen="true" />]]></embedTag>
+	</chat>
+</results>
+<msg><![CDATA[]]></msg>
+<error><![CDATA[]]></error>
+<processTime>TRUE</processTime>
+<version><![CDATA[mashery-r10]]></version>
+</xml>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<flex-config>
+	<target-player>10.2.0</target-player>
+	<compiler>
+		<external-library-path>
+			<path-element>${flexlib}/libs/player/10.2/playerglobal.swc</path-element>
+		</external-library-path>
+		<source-path>
+			<path-element>src</path-element>
+		</source-path>
+	</compiler>
+	<include-classes>
+		<class>jp.ractius.ripple.display.NoScaleStageSprite</class>
+		<class>jp.ractius.ripple.net.LocalSocket</class>
+		<class>jp.ractius.ripple.utils.CsvUtil</class>
+		<class>jp.ractius.ustrplite.UstrpliteConstants</class>
+	</include-classes>
+	<output>../Crostr/Crostr.Base/lib/CrostrLib.swc</output>
+</flex-config>

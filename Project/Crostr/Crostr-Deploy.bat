@@ -1,0 +1,1 @@
+copy ..\Crostr.%1\bin\Crostr.%1.swf ..\..\..\Release\UstrPLite3\bin\crostr\Crostr.%1.swf

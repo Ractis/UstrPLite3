@@ -1,0 +1,36 @@
+﻿<html>
+	<head>
+		<title></title>
+		<style type='text/css'>
+			div.box { position:absolute; left:0px; top:0px; width:100%; height:100%; }
+			#overlay { z-index:1; }
+		</style>
+		<script type='text/javascript'>
+			function onInit()
+			{
+				var params		= location.href.split("?")[1].split("&");
+				var flashvars	= "sessionId=" + params[1];
+				var source		= "Crostr." + params[0] + ".swf";
+				document.getElementById( "player" ).innerHTML =
+					"<object classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' width='100%' height='100%'>" +
+						"<param name='flashvars' value='" + flashvars + "'/>" +
+						"<param name='movie' value='" + source + "'/>" +
+						"<param name='wmode' value='transparent'/>" +
+						"<param name='allowscriptaccess' value='always'/>" +
+						"<object type='application/x-shockwave-flash' data='" + source + "' width='100%' height='100%'>" +
+							"<param name='flashvars' value='" + flashvars + "'/>" +
+							"<param name='wmode' value='transparent'/>" +
+							"<param name='allowscriptaccess' value='always'/>" +
+						"</object>" +
+					"</object>";
+			}
+		</script>
+	</head>
+	<body onload='onInit();'>
+		<div class='box' id='overlay'>
+			<img src='space.gif' width='100%' height='100%' />
+		</div>
+		<div class='box' id='player'>
+		</div>
+	</body>
+</html>
