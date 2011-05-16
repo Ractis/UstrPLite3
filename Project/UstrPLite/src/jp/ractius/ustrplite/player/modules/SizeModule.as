@@ -2,6 +2,8 @@ package jp.ractius.ustrplite.player.modules
 {
 	import flash.display.DisplayObject;
 	import flash.events.EventDispatcher;
+	import jp.ractius.ripple.air.WindowBounds;
+	import jp.ractius.ripple.events.WindowBoundsEvent;
 	import jp.ractius.ustrplite.events.ResizeEvent;
 	
 	/**
@@ -9,22 +11,37 @@ package jp.ractius.ustrplite.player.modules
 	 * @author ractis
 	 */
 	public class SizeModule extends EventDispatcher 
-	{	
+	{
+		private var m_bounds:WindowBounds;
+		
 		private var m_w:uint;
 		private var m_h:uint;
 		
-		public function SizeModule( initW:uint, initH:uint ) 
+		public function SizeModule( bounds:WindowBounds ) 
 		{
-			m_w	= initW;
-			m_h = initH;
+			m_bounds = bounds;
+			_copyFromBounds();
+			
+			m_bounds.addEventListener( WindowBoundsEvent.RESIZING, _onResizingBounds );
+		}
+		
+		private function _copyFromBounds():void
+		{
+			m_w	= m_bounds.w;
+			m_h = m_bounds.h;
+		}
+		
+		private function _onResizingBounds( e:WindowBoundsEvent ):void 
+		{
+			_copyFromBounds();
+			
+			_fireResizeEvent();
 		}
 		
 		public function setSize( w:uint, h:uint ):void
 		{
-			m_w = w;
-			m_h = h;
-			
-			_fireResizeEvent();
+			m_bounds.setSize( w, h );
+			m_bounds.commit();
 		}
 		
 		/**

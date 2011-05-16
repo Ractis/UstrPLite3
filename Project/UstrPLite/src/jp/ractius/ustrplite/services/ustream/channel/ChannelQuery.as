@@ -1,8 +1,7 @@
 package jp.ractius.ustrplite.services.ustream.channel 
 {
-	import jp.ractius.ustrplite.data.channel.ChannelData;
+	import jp.ractius.ustrplite.data.channel.ChannelUpdater;
 	import jp.ractius.ustrplite.services.common.channel.BaseChannelQuery;
-	import jp.ractius.ustrplite.services.common.channel.ChannelUpdater;
 	import jp.ractius.ustrplite.services.ustream.channel.loader.ChannelInfoLoader;
 	
 	/**
@@ -17,9 +16,9 @@ package jp.ractius.ustrplite.services.ustream.channel
 			
 		}
 		
-		override public function updateInfo( channel:ChannelData ):void 
+		override public function updateInfo( channel:ChannelUpdater ):void 
 		{
-			new ChannelInfoLoader( new ChannelUpdater( channel ) );
+			new ChannelInfoLoader( channel );
 		}
 		
 	}

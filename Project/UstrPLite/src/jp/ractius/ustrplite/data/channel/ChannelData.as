@@ -82,6 +82,7 @@ package jp.ractius.ustrplite.data.channel
 		
 		public function set status( value:String ):void 
 		{
+			if ( value == UstrpliteConstants.STATUS_UNKNOWN ) return;
 			if ( m_status == value ) return;
 			
 			m_status = value;

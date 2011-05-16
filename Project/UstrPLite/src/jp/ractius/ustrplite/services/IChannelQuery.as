@@ -1,6 +1,6 @@
 package jp.ractius.ustrplite.services 
 {
-	import jp.ractius.ustrplite.data.channel.ChannelData;
+	import jp.ractius.ustrplite.data.channel.ChannelUpdater;
 	
 	/**
 	 * ...
@@ -8,7 +8,7 @@ package jp.ractius.ustrplite.services
 	 */
 	public interface IChannelQuery 
 	{
-		function updateInfo( channel:ChannelData ):void;
+		function updateInfo( channel:ChannelUpdater ):void;
 	}
 	
 }

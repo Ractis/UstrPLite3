@@ -16,7 +16,6 @@ package jp.ractius.ustrplite.services.common
 		
 		public function get name():String			{ return null; }
 		public function get isRemote():Boolean		{ return false; }
-		public function get remoteDomain():String	{ return null; }
 		
 	}
 

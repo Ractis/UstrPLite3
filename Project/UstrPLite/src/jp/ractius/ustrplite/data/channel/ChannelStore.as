@@ -45,7 +45,7 @@ package jp.ractius.ustrplite.data.channel
 				channel = service[ channelName ] = new ChannelData( serviceName, channelName );
 				
 				// 情報の更新
-				_channelQuery( serviceName ).updateInfo( channel );
+				_channelQuery( serviceName ).updateInfo( new ChannelUpdater( channel ) );
 			}
 			
 			return channel;

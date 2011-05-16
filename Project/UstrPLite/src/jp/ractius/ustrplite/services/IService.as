@@ -8,6 +8,7 @@ package jp.ractius.ustrplite.services
 	public interface IService 
 	{
 		function createPlayerOption():IPlayerOption;
+		function createChannelUri():IChannelUri;
 		
 		function get channelQuery():IChannelQuery;
 		

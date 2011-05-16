@@ -1,7 +1,5 @@
-package jp.ractius.ustrplite.services.common.channel 
-{
-	import jp.ractius.ustrplite.data.channel.ChannelData;
-	
+package jp.ractius.ustrplite.data.channel 
+{	
 	/**
 	 * ...
 	 * updateInfo か updateStatus を一度だけ呼ぶ。
@@ -16,6 +14,11 @@ package jp.ractius.ustrplite.services.common.channel
 			m_tgt = tgt;
 			
 			m_tgt.beginUpdate();
+		}
+		
+		public function clone():ChannelUpdater
+		{
+			return new ChannelUpdater( m_tgt );
 		}
 		
 		public function get channelName():String { return m_tgt.channelName; }

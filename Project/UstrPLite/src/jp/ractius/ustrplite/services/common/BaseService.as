@@ -2,6 +2,7 @@ package jp.ractius.ustrplite.services.common
 {
 	import jp.ractius.ustrplite.services.common.channel.BaseChannelQuery;
 	import jp.ractius.ustrplite.services.IChannelQuery;
+	import jp.ractius.ustrplite.services.IChannelUri;
 	import jp.ractius.ustrplite.services.IPlayerOption;
 	import jp.ractius.ustrplite.services.IService;
 	
@@ -29,7 +30,9 @@ package jp.ractius.ustrplite.services.common
 		//------------------------------------------------------------------------------
 		public function createPlayerOption():IPlayerOption		{ return new BasePlayerOption(); }
 		
-		public final function get channelQuery():IChannelQuery	{ return m_channelQuery;}
+		public function createChannelUri():IChannelUri			{ return new BaseChannelUri( null, null ); }
+		
+		public final function get channelQuery():IChannelQuery	{ return m_channelQuery; }
 		
 		public function get isChannelIdAsName():Boolean			{ return true; }
 		

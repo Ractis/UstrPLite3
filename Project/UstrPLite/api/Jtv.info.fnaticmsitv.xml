@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel>
+  <subcategory nil="true"></subcategory>
+  <category>gaming</category>
+  <id>20173540</id>
+  <login>fnaticmsitv</login>
+  <title>FnaticTV</title>
+  <status>FnaticTV Powered by MSI GT780 Notebook.  For more information visit www.fnatic.com.</status>
+  <tags nil="true"></tags>
+  <producer>true</producer>
+  <category_title>Gaming</category_title>
+  <subcategory_title nil="true"></subcategory_title>
+  <producer>true</producer>
+  <language>en</language>
+  <timezone>America/Los_Angeles</timezone>
+  <channel_url>http://www.justin.tv/fnaticmsitv</channel_url>
+  <mature nil="true"></mature>
+  <image_url_huge>http://static-cdn.jtvnw.net/jtv_user_pictures/fnaticmsitv-profile_image-43fa2402cb251cbc-600x600.jpeg</image_url_huge>
+  <image_url_large>http://static-cdn.jtvnw.net/jtv_user_pictures/fnaticmsitv-profile_image-43fa2402cb251cbc-300x300.jpeg</image_url_large>
+  <image_url_medium>http://static-cdn.jtvnw.net/jtv_user_pictures/fnaticmsitv-profile_image-43fa2402cb251cbc-150x150.jpeg</image_url_medium>
+  <image_url_small>http://static-cdn.jtvnw.net/jtv_user_pictures/fnaticmsitv-profile_image-43fa2402cb251cbc-70x70.jpeg</image_url_small>
+  <image_url_tiny>http://static-cdn.jtvnw.net/jtv_user_pictures/fnaticmsitv-profile_image-43fa2402cb251cbc-50x50.jpeg</image_url_tiny>
+  <screen_cap_url_huge>http://static-cdn.jtvnw.net/previews/live_user_fnaticmsitv-630x473.jpg</screen_cap_url_huge>
+  <screen_cap_url_large>http://static-cdn.jtvnw.net/previews/live_user_fnaticmsitv-320x240.jpg</screen_cap_url_large>
+  <screen_cap_url_medium>http://static-cdn.jtvnw.net/previews/live_user_fnaticmsitv-150x113.jpg</screen_cap_url_medium>
+  <screen_cap_url_small>http://static-cdn.jtvnw.net/previews/live_user_fnaticmsitv-70x53.jpg</screen_cap_url_small>
+  <embed_enabled>true</embed_enabled>
+  <embed_code>    &lt;object type=&quot;application/x-shockwave-flash&quot; height=&quot;295&quot; width=&quot;353&quot; id=&quot;live_embed_player_flash&quot; data=&quot;http://www.justin.tv/widgets/live_embed_player.swf?channel=fnaticmsitv&quot; bgcolor=&quot;#000000&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.justin.tv/widgets/live_embed_player.swf&quot; /&gt;&lt;param name=&quot;flashvars&quot; value=&quot;start_volume=25&amp;channel=fnaticmsitv&amp;auto_play=false&quot; /&gt;&lt;/object&gt;
+</embed_code>
+  <views_count>294516</views_count>
+  <anonymous_chatters_allowed>false</anonymous_chatters_allowed>
+  <about>The Fnatic team is an ambitious and highly successful video gaming organisation, which supports the world's greatest gamers.  After being crowned as Electronic Sports Team of The Year, Fnatic has achieved over 20 victories in major tournaments and are acknowledged worldwide for their famous and charismatic Swedish Counter-Strike team and former World Tour Champion, Sander &amp;quot;VoO&amp;quot; Kaasjager.  Fnatic currently have squads in Counter-Strike, Starcraft 2, World of Warcraft, Call of Duty, QuakeLive, Halo and HoN.
+
+web: Fnatic.com | facebook: /Fnatic | twitter: @Fnatic
+
+
+
+
+</about>
+  <description>FnaticTV Justin.tv channel</description>
+  <channel_text_color>#222222</channel_text_color>
+  <channel_link_color>#E46D09</channel_link_color>
+  <channel_column_color>#FFFFFF</channel_column_color>
+  <channel_background_color>#141213</channel_background_color>
+  <channel_background_image_url>http://static-cdn.jtvnw.net/jtv_user_pictures/fnaticmsitv-channel_background_image-bca962716bc2646d.jpeg</channel_background_image_url>
+  <channel_header_image_url>http://static-cdn.jtvnw.net/jtv_user_pictures/fnaticmsitv-channel_header_image-a2eae9fdcf351190-640x125.png</channel_header_image_url>
+</channel>

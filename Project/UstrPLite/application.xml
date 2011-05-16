@@ -2,10 +2,10 @@
 <application xmlns="http://ns.adobe.com/air/application/2.6">
 	
 	<id>jp.ractius.ustrplite</id> 
-	<versionNumber>3.00.0</versionNumber> 
+	<versionNumber>2.99.1</versionNumber> 
 	<filename>UstrPLite</filename> 
 	
-	<name>UstrPLite 3</name> 
+	<name>UstrPLite 3 Alpha</name> 
 	<description>A standalone player for live streaming.</description> 
 	<copyright>Copyright (c) 2009-2011 Ractis</copyright> 
 	

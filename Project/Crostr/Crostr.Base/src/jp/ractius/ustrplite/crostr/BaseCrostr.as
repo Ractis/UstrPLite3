@@ -1,5 +1,6 @@
 package jp.ractius.ustrplite.crostr
 {
+	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.media.SoundMixer;
@@ -42,7 +43,7 @@ package jp.ractius.ustrplite.crostr
 			stage.addEventListener( Event.RESIZE, _onResize );
 		}
 		
-		private function _onResize():void 
+		private function _onResize( ...e ):void 
 		{
 			_updateViewerSize();
 		}
@@ -53,9 +54,9 @@ package jp.ractius.ustrplite.crostr
 		{
 			if ( m_viewer )
 			{
-				removeChild( Sprite( m_viewer ) );
+				removeChild( DisplayObject( m_viewer ) );
 			}
-			addChild( Sprite( m_viewer = value ) );
+			addChild( DisplayObject( m_viewer = value ) );
 			
 			m_viewer.width = 50;
 			m_viewer.height = 50;

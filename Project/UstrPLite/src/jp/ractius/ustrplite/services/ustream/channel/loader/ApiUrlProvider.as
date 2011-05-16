@@ -1,31 +1,27 @@
 package jp.ractius.ustrplite.services.ustream.channel.loader 
 {
 	import flash.utils.escapeMultiByte;
+	import jp.ractius.ustrplite.services.common.channel.loader.BaseApiUrlProvider;
 	
 	/**
 	 * ...
 	 * @author ractis
 	 */
-	internal class ApiUrlProvider
+	internal class ApiUrlProvider extends BaseApiUrlProvider 
 	{
 		static private const API_KEY:String = "";
-		
-		static private const URL_PREFIX:String = "http://api.ustream.tv/xml/";
-		static private const URL_SUFFIX:String = "key=" + API_KEY;
 		
 		public function ApiUrlProvider() 
 		{
 			
 		}
 		
-		static private function _genUrl( val:String ):String
-		{
-			return URL_PREFIX + val + URL_SUFFIX;
-		}
+		override protected function get urlHead():String { return "http://api.ustream.tv/xml/"; }
+		override protected function get urlFoot():String { return "key=" + API_KEY; }
 		
-		static public function channelInfoUrl( channelName:String ):String
+		override public function channelInfoUrl( channelName:String ):String 
 		{
-			return _genUrl( "channel/" + escapeMultiByte( channelName ) + "/getInfo?" );
+			return genUrl( "channel/" + escapeMultiByte( channelName ) + "/getInfo?" );
 		}
 		
 	}

@@ -1,6 +1,6 @@
 package jp.ractius.ustrplite.services.common.channel 
 {
-	import jp.ractius.ustrplite.data.channel.ChannelData;
+	import jp.ractius.ustrplite.data.channel.ChannelUpdater;
 	import jp.ractius.ustrplite.services.IChannelQuery;
 	
 	/**
@@ -15,7 +15,7 @@ package jp.ractius.ustrplite.services.common.channel
 			
 		}
 		
-		public function updateInfo( channel:ChannelData ):void
+		public function updateInfo( channel:ChannelUpdater ):void
 		{
 			// override me
 		}

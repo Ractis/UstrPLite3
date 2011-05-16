@@ -6,7 +6,7 @@
 また、UstrPLite3 の一部の機能を使用するためには、以下の API キーが必要になります：
 
 - Ustream API key ( at jp.ractius.ustrplite.services.ustream.channel.loader.ApiUrlProvider ) 
-- Justin.tv API key
+- Justin.tv API Consumer key ( at jp.ractius.ustrplite.crostr.justintv.Main )
 - Livestream API key
 - Twitter API Consumer key/secret
 

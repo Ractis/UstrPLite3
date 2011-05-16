@@ -1,4 +1,4 @@
-package jp.ractius.ustrplite.services.common.channel 
+package jp.ractius.ustrplite.data.channel 
 {
 	
 	/**

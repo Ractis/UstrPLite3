@@ -1,20 +1,20 @@
 package jp.ractius.ustrplite.services.ustream.channel.loader 
 {
-	import jp.ractius.ustrplite.services.common.channel.ChannelUpdater;
-	import jp.ractius.ustrplite.services.common.channel.IChannelInfo;
-	import jp.ractius.ustrplite.services.common.channel.loader.BaseChannelInfolLoader;
+	import jp.ractius.ustrplite.data.channel.ChannelUpdater;
+	import jp.ractius.ustrplite.data.channel.IChannelInfo;
+	import jp.ractius.ustrplite.services.common.channel.loader.BaseChannelInfoLoader;
 	import jp.ractius.ustrplite.services.ustream.channel.parser.ChannelInfoApiParser;
 	
 	/**
 	 * ...
 	 * @author ractis
 	 */
-	public class ChannelInfoLoader extends BaseChannelInfolLoader
+	public class ChannelInfoLoader extends BaseChannelInfoLoader
 	{
 		
-		public function ChannelInfoLoader( updater:ChannelUpdater ) 
+		public function ChannelInfoLoader( channel:ChannelUpdater ) 
 		{
-			super( updater, ApiUrlProvider.channelInfoUrl( updater.channelName ) );
+			super( channel, new ApiUrlProvider() );
 		}
 		
 		override protected function createChannelInfo( data:String ):IChannelInfo 

@@ -11,7 +11,9 @@ package jp.ractius.ustrplite.player
 	public class CrostrDisp extends Sprite 
 	{
 		static private const CROSTR_DIR_LOCAL:String	= "app:/bin/crostr/";
-		static private const CROSTR_DIR_REMOTE:String	= "http://ractis.rdy.jp/ustp/crostr/";
+		static private const CROSTR_DIR_REMOTE:String	= "http://" + CROSTR_REMOTE_DOMAIN + "/ustp/crostr/";
+		
+		static public const CROSTR_REMOTE_DOMAIN:String	= "ractis.rdy.jp";
 		
 		private var m_loader:HTMLLoader;
 		

@@ -14,7 +14,6 @@ package jp.ractius.ustrplite.services
 		 */
 		function get isRemote():Boolean;
 		
-		function get remoteDomain():String;
 	}
 	
 }
