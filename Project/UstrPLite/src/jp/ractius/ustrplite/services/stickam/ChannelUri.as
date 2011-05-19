@@ -12,7 +12,8 @@ package jp.ractius.ustrplite.services.stickam
 		public function ChannelUri() 
 		{
 			super( StcService.NAME,
-				   [ "stc", "stickam", "stickam.jp/profile" ] );
+				   [ "stc", "stickam" ],
+				   [ "stickam.jp/profile" ] );
 		}
 		
 	}

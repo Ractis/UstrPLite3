@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<screenName>日本語</screenName>
+	
+	<player>
+		<menu>
+			<close>プレイヤーを閉じる</close>
+		</menu>
+	</player>
+</data>

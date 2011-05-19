@@ -3,6 +3,7 @@ package jp.ractius.ustrplite.services.justintv.channel.loader
 	import jp.ractius.ustrplite.data.channel.ChannelUpdater;
 	import jp.ractius.ustrplite.services.common.channel.loader.BaseChannelLoader;
 	import jp.ractius.ustrplite.services.justintv.channel.parser.ChannelStatusParser;
+	import jp.ractius.ustrplite.services.justintv.ChannelExDataName;
 	
 	/**
 	 * ...
@@ -20,7 +21,9 @@ package jp.ractius.ustrplite.services.justintv.channel.loader
 		
 		private function _onLoad( ...e ):void 
 		{
-			channel.updateStatus( new ChannelStatusParser( channelName, data ) );
+			var parser:ChannelStatusParser = new ChannelStatusParser( channelName, data );
+			channel.updateStatus( parser );
+			channel.tgt.setExData( ChannelExDataName.VIDEO_SIZE, parser.videoSize );
 		}
 		
 	}

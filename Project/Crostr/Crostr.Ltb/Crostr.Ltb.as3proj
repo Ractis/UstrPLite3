@@ -51,7 +51,6 @@
     <element path="..\..\UstrPLite\lib\as3corelib.swc" />
     <element path="..\..\UstrPLite\lib\as3httpclientlib-1_0_6.swc" />
     <element path="..\..\UstrPLite\lib\Crypto.swc" />
-    <element path="..\..\UstrPLite\lib\oauth-as3.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

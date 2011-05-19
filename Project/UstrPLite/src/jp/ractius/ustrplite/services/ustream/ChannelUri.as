@@ -12,7 +12,8 @@ package jp.ractius.ustrplite.services.ustream
 		public function ChannelUri() 
 		{
 			super( UstService.NAME,
-				   [ "ust", "ustream", "ustream.tv/channel", "ustream.tv" ] );
+				   [ "ust", "ustream" ],
+				   [ "ustream.tv/channel", "ustream.tv" ] );
 		}
 		
 	}

@@ -1,5 +1,6 @@
 package jp.ractius.ustrplite.services.justintv 
 {
+	import jp.ractius.ustrplite.player.Player;
 	import jp.ractius.ustrplite.services.common.BaseService;
 	import jp.ractius.ustrplite.services.IChannelQuery;
 	import jp.ractius.ustrplite.services.IChannelUri;
@@ -22,7 +23,7 @@ package jp.ractius.ustrplite.services.justintv
 		
 		override protected function createChannelQuery():IChannelQuery	{ return new ChannelQuery(); }
 		
-		override public function createPlayerOption():IPlayerOption		{ return new PlayerOption(); }
+		override public function createPlayerOption( player:Player ):IPlayerOption	{ return new PlayerOption( player ); }
 		
 		override public function createChannelUri():IChannelUri			{ return new ChannelUri(); }
 		

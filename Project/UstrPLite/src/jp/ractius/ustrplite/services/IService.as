@@ -1,5 +1,6 @@
 package jp.ractius.ustrplite.services 
 {
+	import jp.ractius.ustrplite.player.Player;
 	
 	/**
 	 * サービス特有の機能を提供するインターフェイス.
@@ -7,7 +8,7 @@ package jp.ractius.ustrplite.services
 	 */
 	public interface IService 
 	{
-		function createPlayerOption():IPlayerOption;
+		function createPlayerOption( player:Player ):IPlayerOption;
 		function createChannelUri():IChannelUri;
 		
 		function get channelQuery():IChannelQuery;

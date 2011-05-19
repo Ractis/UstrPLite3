@@ -2,6 +2,7 @@ package jp.ractius.ustrplite.crostr.ustream
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.geom.Rectangle;
 	import jp.ractius.ustrplite.crostr.BaseLoadRslCrostr;
 	
 	/**
@@ -48,6 +49,13 @@ package jp.ractius.ustrplite.crostr.ustream
 			}
 			
 			m_channel = m_logic.createChannel( channelId, /*autoPlay ="*/true, password );
+			m_channel.addEventListener( "getStreamSize", _onGetStreamSize );
+		}
+		
+		private function _onGetStreamSize( e:Event ):void 
+		{
+			var bounds:Rectangle = m_channel.streamRect;
+			sendVideoSize( bounds.width, bounds.height );
 		}
 		
 	}

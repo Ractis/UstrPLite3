@@ -3,6 +3,7 @@ package jp.ractius.ustrplite
 	import flash.display.Sprite;
 	import jp.ractius.ripple.air.WindowBounds;
 	import jp.ractius.ripple.air.WindowMoveController;
+	import jp.ractius.ripple.utils.Localization;
 	import jp.ractius.ustrplite.data.channel.ChannelData;
 	import jp.ractius.ustrplite.data.channel.ChannelStore;
 	import jp.ractius.ustrplite.player.PlayerWindow;
@@ -22,6 +23,8 @@ package jp.ractius.ustrplite
 		
 		public function Main():void 
 		{
+		//	Localization.initialize( "english" );
+			Localization.initialize();
 			Services.initialize();
 			
 			var bg:Sprite = new Sprite;
@@ -32,7 +35,7 @@ package jp.ractius.ustrplite
 			
 			var ctrl:WindowMoveController = new WindowMoveController( bg, new WindowBounds( stage ) );
 			
-			var tf:JTextField = new JTextField();
+			var tf:JTextField = new JTextField( "jtv/fnaticmsitv" );
 			tf.setSize( new IntDimension( 180, 24 ) );
 			tf.x = 10;
 			tf.y = 13;

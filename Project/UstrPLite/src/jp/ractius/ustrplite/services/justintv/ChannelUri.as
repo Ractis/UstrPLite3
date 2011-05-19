@@ -12,7 +12,8 @@ package jp.ractius.ustrplite.services.justintv
 		public function ChannelUri() 
 		{
 			super( JtvService.NAME,
-				   [ "jtv", "justintv", "justin.tv" ] );
+				   [ "jtv", "justintv" ],
+				   [ "justin.tv" ] );
 		}
 		
 	}

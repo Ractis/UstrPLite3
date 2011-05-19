@@ -11,11 +11,13 @@ package jp.ractius.ustrplite.player
 	import jp.ractius.ripple.display.NoScaleStageSprite;
 	import jp.ractius.ripple.display.resizableFrame.ResizableFrame;
 	import jp.ractius.ripple.net.LocalSocket;
+	import jp.ractius.ripple.utils.CsvUtil;
 	import jp.ractius.ustrplite.data.channel.ChannelData;
 	import jp.ractius.ustrplite.events.ChannelEvent;
 	import jp.ractius.ustrplite.events.ResizeEvent;
 	import jp.ractius.ustrplite.events.VolumeEvent;
 	import jp.ractius.ustrplite.player.modules.InputModule;
+	import jp.ractius.ustrplite.player.modules.MenuModule;
 	import jp.ractius.ustrplite.player.modules.SizeModule;
 	import jp.ractius.ustrplite.player.modules.VolumeModule;
 	import jp.ractius.ustrplite.services.IPlayerOption;
@@ -38,11 +40,12 @@ package jp.ractius.ustrplite.player
 		private var m_resizableFrame:ResizableFrame;
 		private var m_windowBounds:WindowBounds;
 		private var m_windowMoveCtrl:WindowMoveController;
-		private var m_windowResizeCtrl:WindowResizeController;
+		private var m_windowResizeCtrl:WindowResizeKeepARController;
 		
 		private var m_sizeMod:SizeModule;
 		private var m_volumeMod:VolumeModule;
 		private var m_inputMod:InputModule;
+		private var m_menuMod:MenuModule;
 		
 		private var m_background:Shape;
 		private var m_crostrDisp:CrostrDisp;
@@ -51,7 +54,7 @@ package jp.ractius.ustrplite.player
 		public function Player( channel:ChannelData ) 
 		{
 			m_channel	= channel;
-			m_option	= Services.getService( channel.serviceName ).createPlayerOption();
+			m_option	= Services.getService( channel.serviceName ).createPlayerOption( this );
 			m_sessionId	= escape( String( new Date().time ) );
 			
 			super();
@@ -71,6 +74,8 @@ package jp.ractius.ustrplite.player
 			
 			addChild( m_resizableFrame );
 			
+			m_option.onInitialized();
+			
 			m_sizeMod.addEventListener( ResizeEvent.RESIZE, _onResize );
 			m_volumeMod.addEventListener( VolumeEvent.CHANGE_VOLUME, _setVolume );
 			
@@ -87,7 +92,7 @@ package jp.ractius.ustrplite.player
 		
 		private function _initCrostr():void 
 		{
-			addChild( m_crostrDisp = new CrostrDisp( m_option.name, m_sessionId, m_option.isRemote ) );
+			addChild( m_crostrDisp = new CrostrDisp( m_channel.serviceName, m_sessionId, m_option.isRemote ) );
 		}
 		
 		private function _initBackground():void 
@@ -131,6 +136,7 @@ package jp.ractius.ustrplite.player
 			m_sizeMod	= new SizeModule( m_windowBounds );
 			m_volumeMod	= new VolumeModule();
 			m_inputMod	= new InputModule( this );
+			m_menuMod	= new MenuModule( this );
 		}
 		
 		private function _playChannel( ...e ):void
@@ -148,6 +154,12 @@ package jp.ractius.ustrplite.player
 		
 		public function get sizeMod():SizeModule { return m_sizeMod; }
 		public function get volumeMod():VolumeModule { return m_volumeMod; }
+		public function get channel():ChannelData { return m_channel; }
+		
+		public function updateAspectRatio( w:Number, h:Number ):void
+		{
+			m_windowResizeCtrl.aspectRatio = w / h;
+		}
 		
 		//------------------------------------------------------------------------------
 		// From - Crostr
@@ -165,6 +177,12 @@ package jp.ractius.ustrplite.player
 			
 			if ( m_channel.channelId )	_playChannel();
 			else						m_channel.addEventListener( ChannelEvent.CHANGE_CHANNEL_ID, _playChannel );
+		}
+		
+		public function onVideoSizeCros( data:String ):void
+		{
+			var ary:Array = CsvUtil.parseCsv( data );
+			updateAspectRatio( ary[0], ary[1] );
 		}
 		
 	}

@@ -5,6 +5,7 @@ package jp.ractius.ustrplite.crostr.livetube
 	import flash.utils.escapeMultiByte;
 	import flash.utils.unescapeMultiByte;
 	import jp.ractius.ustrplite.crostr.BaseCrostr;
+	import jp.ractius.ustrplite.crostr.livetube.events.VideoSizeEvent;
 	
 	/**
 	 * ...
@@ -48,7 +49,16 @@ package jp.ractius.ustrplite.crostr.livetube
 		{
 		//	trace( streamUrl );
 			sendPrint( streamUrl );
-			viewer = new LivetubePlayer( streamUrl );
+			
+			var player:LivetubePlayer = new LivetubePlayer( streamUrl );
+			viewer = player;
+			
+			player.addEventListener( VideoSizeEvent.GET_VIDEO_SIZE, _onGetVideoSize );
+		}
+		
+		private function _onGetVideoSize( e:VideoSizeEvent ):void 
+		{
+			sendVideoSize( e.w, e.h );
 		}
 		
 	}

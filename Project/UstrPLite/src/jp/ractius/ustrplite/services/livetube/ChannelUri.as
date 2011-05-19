@@ -12,7 +12,8 @@ package jp.ractius.ustrplite.services.livetube
 		public function ChannelUri() 
 		{
 			super( LtbService.NAME,
-				   [ "ltb", "livetube", "livetube.cc" ] );
+				   [ "ltb", "livetube" ],
+				   [ "livetube.cc" ] );
 		}
 		
 		override protected function get isEraseSlash():Boolean { return false; }

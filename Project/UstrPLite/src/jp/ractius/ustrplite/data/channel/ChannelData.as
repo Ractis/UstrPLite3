@@ -1,7 +1,9 @@
 package jp.ractius.ustrplite.data.channel 
 {
 	import flash.events.EventDispatcher;
+	import flash.utils.Dictionary;
 	import jp.ractius.ustrplite.events.ChannelEvent;
+	import jp.ractius.ustrplite.events.ChannelExDataEvent;
 	import jp.ractius.ustrplite.services.Services;
 	import jp.ractius.ustrplite.UstrpliteConstants;
 	
@@ -25,6 +27,8 @@ package jp.ractius.ustrplite.data.channel
 		private var m_imageUrl:String;
 		
 		private var m_status:String		= UstrpliteConstants.STATUS_UNKNOWN;
+		
+		private var m_exData:Dictionary = new Dictionary();
 		
 		public function ChannelData( serviceName:String, channelName:String ) 
 		{
@@ -141,7 +145,7 @@ package jp.ractius.ustrplite.data.channel
 		
 		public function get imageUrl():String { return m_imageUrl; }
 		
-		public function set imageUrl(value:String):void 
+		public function set imageUrl( value:String ):void 
 		{
 			if ( m_imageUrl == value ) return;
 			
@@ -154,6 +158,22 @@ package jp.ractius.ustrplite.data.channel
 		public function set isExists( value:Boolean ):void 
 		{
 			m_isExists = value;
+		}
+		
+		public function getExData( key:String ):Object
+		{
+			return m_exData[ key ];
+		}
+		
+		public function setExData( key:String, data:Object ):void
+		{
+			m_exData[ key ] = data;
+			dispatchEvent( new ChannelExDataEvent( ChannelExDataEvent.CHANGE_EX_DATA, key ) );
+		}
+		
+		public function exDataHasProp( key:String ):Boolean
+		{
+			return m_exData.hasOwnProperty( key );
 		}
 		
 	}

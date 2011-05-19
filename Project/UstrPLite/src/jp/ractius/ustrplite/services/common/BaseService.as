@@ -1,5 +1,6 @@
 package jp.ractius.ustrplite.services.common 
 {
+	import jp.ractius.ustrplite.player.Player;
 	import jp.ractius.ustrplite.services.common.channel.BaseChannelQuery;
 	import jp.ractius.ustrplite.services.IChannelQuery;
 	import jp.ractius.ustrplite.services.IChannelUri;
@@ -28,9 +29,9 @@ package jp.ractius.ustrplite.services.common
 		//------------------------------------------------------------------------------
 		// implments IService
 		//------------------------------------------------------------------------------
-		public function createPlayerOption():IPlayerOption		{ return new BasePlayerOption(); }
+		public function createPlayerOption( player:Player ):IPlayerOption	{ return new BasePlayerOption( player ); }
 		
-		public function createChannelUri():IChannelUri			{ return new BaseChannelUri( null, null ); }
+		public function createChannelUri():IChannelUri			{ return new BaseChannelUri( null, null, null ); }
 		
 		public final function get channelQuery():IChannelQuery	{ return m_channelQuery; }
 		

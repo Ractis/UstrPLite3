@@ -4,6 +4,7 @@ package jp.ractius.ustrplite.crostr.livetube
 	import flash.media.Video;
 	import flash.net.NetConnection;
 	import flash.net.NetStream;
+	import jp.ractius.ustrplite.crostr.livetube.events.VideoSizeEvent;
 	
 	/**
 	 * ...
@@ -66,13 +67,21 @@ package jp.ractius.ustrplite.crostr.livetube
 			{
 			case "NetConnection.Connect.Success":
 				m_netStream = new NetStream( m_netConnection );
-				m_netStream.client = new Object();
+				
+				var client:Object = new Object();
+				client.onMetaData = _onMetaDataNS;
+				m_netStream.client = client;
 				
 				attachNetStream( m_netStream );
 				
 				m_netStream.play( m_streamName );
 				break;
 			}
+		}
+		
+		private function _onMetaDataNS( data:Object ):void 
+		{
+			dispatchEvent( new VideoSizeEvent( data.width, data.height ) );
 		}
 		
 	}

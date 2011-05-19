@@ -57,6 +57,30 @@ package jp.ractius.ripple.air
 			}
 		}
 		
+		public function get aspectRatio():Number { return m_aspectRatio; }
+		
+		public function set aspectRatio(value:Number):void 
+		{
+			var edgeMoving:int;
+			
+			if ( value > m_aspectRatio )	// 横長に
+			{
+				edgeMoving = Math.round( ( bounds.h - bounds.w / value ) / 2 );
+				moveEdgeT(  edgeMoving );
+				moveEdgeB( -edgeMoving );
+			}
+			else							// 縦長に
+			{
+				edgeMoving = Math.round( ( bounds.w - bounds.h * value ) / 2 );
+				moveEdgeL(  edgeMoving );
+				moveEdgeR( -edgeMoving );
+			}
+			
+			bounds.commit();
+			
+			m_aspectRatio = value;
+		}
+		
 	}
 
 }

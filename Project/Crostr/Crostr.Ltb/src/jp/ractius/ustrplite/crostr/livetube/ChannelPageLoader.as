@@ -68,13 +68,13 @@ package jp.ractius.ustrplite.crostr.livetube
 			var path:String = escapeMultiByte( channelId );
 			
 			// エンコードされたくない文字を復元
-			var restore:Function = function( char:String ):void
+			var unescapeChar:Function = function( char:String ):void
 			{
 				var charEncoded:String = escapeMultiByte( char );
-				path = path.split( charEncoded ).join( char );
+				path = path.replace( charEncoded, char );
 			}
-			restore( "/" );
-			restore( "+" );
+			unescapeChar( "/" );
+			unescapeChar( "+" );
 			
 			uri.path = "/" + path;
 			

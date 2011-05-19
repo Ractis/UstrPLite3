@@ -23,6 +23,8 @@ package jp.ractius.ustrplite.data.channel
 		
 		public function get channelName():String { return m_tgt.channelName; }
 		
+		public function get tgt():ChannelData { return m_tgt; }
+		
 		public function updateInfo( info:IChannelInfo ):void
 		{
 			if ( info.isAvailable )

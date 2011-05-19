@@ -12,11 +12,13 @@ package jp.ractius.ustrplite.services.common
 		private var m_serviceName:String;
 		private var m_channelName:String;
 		private var m_prefixes:Array;
+		private var m_patterns:Array;
 		
-		public function BaseChannelUri( serviceName:String, prefixes:Array ) 
+		public function BaseChannelUri( serviceName:String, prefixes:Array, patterns:Array ) 
 		{
 			m_serviceName = serviceName;
 			m_prefixes = prefixes;
+			m_patterns = patterns;
 		}
 		
 		protected function get isEraseSlash():Boolean { return true; }
@@ -25,7 +27,7 @@ package jp.ractius.ustrplite.services.common
 		{
 			var erase:Function = function ( char:String ):void
 			{
-				var idx:int = value.search( char );
+				var idx:int = value.indexOf( char );
 				if ( idx > -1 ) value = value.substr( 0, idx );
 			};
 			
@@ -40,18 +42,35 @@ package jp.ractius.ustrplite.services.common
 		
 		public function test( uri:String ):Boolean 
 		{
-			for each ( var prefix:String in m_prefixes )
+			m_channelName = null;
+			
+			var testImpl:Function = function( isPrefix:Boolean ):Boolean
 			{
-				prefix += "/";
-				var idx:int = uri.search( prefix );
+				for each ( var val:String in isPrefix ? m_prefixes : m_patterns )
+				{
+					val += "/";
+					var idx:int = uri.indexOf( val );
+					
+					if ( isPrefix )
+					{
+						if ( idx != 0 ) continue;
+					}
+					else
+					{
+						if ( idx == -1 ) continue;
+					}
+					
+					// 見つかった
+					setChannelName( uri.substr( idx + val.length ) );
+					
+					return true;
+				}
 				
-				if ( idx == -1 ) continue;
-				
-				// 見つかった
-				setChannelName( uri.substr( idx + prefix.length ) );
-				
-				return true;
+				return false;
 			}
+			
+			if ( testImpl( true  ) ) return true;	// PREFIX をチェック
+			if ( testImpl( false ) ) return true;	// PATTERN をチェック
 			
 			return false;
 		}

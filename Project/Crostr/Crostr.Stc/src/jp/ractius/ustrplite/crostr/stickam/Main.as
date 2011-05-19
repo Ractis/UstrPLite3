@@ -43,7 +43,10 @@ package jp.ractius.ustrplite.crostr.stickam
 			if ( e.status == "fail" )
 			{
 				//sendPrint( e.error.message );
+				return;
 			}
+			
+			sendVideoSize( m_player.videoWidth, m_player.videoHeight );
 		}
 		
 		private function get _liveUrl():String

@@ -1,0 +1,343 @@
+<streams>
+<stream>
+<subcategory>movies</subcategory><stream_type>live</stream_type><broadcast_part>17</broadcast_part><featured>False</featured><audio_codec>uncompressed</audio_codec><id href="/stream/show/1211028848.xml">1211028848</id><category>entertainment</category><title>Harry Potter 1-7 (after Peter pan)</title><video_height>432</video_height><instant_replicate>False</instant_replicate><recorder>78928</recorder><site_count>601</site_count><embed_enabled>False</embed_enabled><up_time>Sun May 15 18:52:29 2011</up_time><filtered_on>1305622717</filtered_on><meta_game>Tomb Raider Trilogy</meta_game><format>live</format><channel_count>679</channel_count><embed_count>23</embed_count><abuse_reported>False</abuse_reported><video_codec>AVC</video_codec><directory_hidden>False</directory_hidden><video_width>768</video_width><geo>GB</geo><embed_ratio>0.03685897435897435897</embed_ratio><name href="/stream/show/live_user_jtv_spybot.xml">live_user_jtv_spybot</name><language>en</language><stream_count>624</stream_count><video_bitrate>238.0625</video_bitrate>
+<channel>
+  <subcategory>movies</subcategory>
+  <category>entertainment</category>
+  <id>18817587</id>
+  <login>jtv_spybot</login>
+  <title>jtv_spybot</title>
+  <status>Harry Potter 1-7</status>
+  <tags nil="true"></tags>
+  <producer>false</producer>
+  <category_title>Entertainment</category_title>
+  <subcategory_title>Movies</subcategory_title>
+  <producer>false</producer>
+  <language>en</language>
+  <timezone>America/Los_Angeles</timezone>
+  <channel_url>http://www.justin.tv/jtv_spybot</channel_url>
+  <mature>true</mature>
+  <image_url_huge>http://static-cdn.jtvnw.net/jtv_user_pictures/jtv_spybot-profile_image-3d363744ce6a19ec-600x600.jpeg</image_url_huge>
+  <image_url_large>http://static-cdn.jtvnw.net/jtv_user_pictures/jtv_spybot-profile_image-3d363744ce6a19ec-300x300.jpeg</image_url_large>
+  <image_url_medium>http://static-cdn.jtvnw.net/jtv_user_pictures/jtv_spybot-profile_image-3d363744ce6a19ec-150x150.jpeg</image_url_medium>
+  <image_url_small>http://static-cdn.jtvnw.net/jtv_user_pictures/jtv_spybot-profile_image-3d363744ce6a19ec-70x70.jpeg</image_url_small>
+  <image_url_tiny>http://static-cdn.jtvnw.net/jtv_user_pictures/jtv_spybot-profile_image-3d363744ce6a19ec-50x50.jpeg</image_url_tiny>
+  <screen_cap_url_huge>http://static-cdn.jtvnw.net/previews/live_user_jtv_spybot-630x473.jpg</screen_cap_url_huge>
+  <screen_cap_url_large>http://static-cdn.jtvnw.net/previews/live_user_jtv_spybot-320x240.jpg</screen_cap_url_large>
+  <screen_cap_url_medium>http://static-cdn.jtvnw.net/previews/live_user_jtv_spybot-150x113.jpg</screen_cap_url_medium>
+  <screen_cap_url_small>http://static-cdn.jtvnw.net/previews/live_user_jtv_spybot-70x53.jpg</screen_cap_url_small>
+  <embed_enabled>false</embed_enabled>
+  <embed_code>    &lt;object type=&quot;application/x-shockwave-flash&quot; height=&quot;295&quot; width=&quot;353&quot; id=&quot;live_embed_player_flash&quot; data=&quot;http://www.justin.tv/widgets/live_embed_player.swf?channel=jtv_spybot&quot; bgcolor=&quot;#000000&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.justin.tv/widgets/live_embed_player.swf&quot; /&gt;&lt;param name=&quot;flashvars&quot; value=&quot;start_volume=25&amp;channel=jtv_spybot&amp;auto_play=false&quot; /&gt;&lt;/object&gt;
+</embed_code>
+  <views_count>&lt;&amp; get mongo users.jtv_spybot.views_count 0 &amp;&gt;</views_count>
+</channel>
+<broadcaster>fme</broadcaster><updated_on>Tue May 17 02:53:51 2011</updated_on><channel_view_count>51099</channel_view_count>
+</stream>
+<stream>
+<subcategory>other_gaming</subcategory><stream_type>live</stream_type><broadcast_part>4</broadcast_part><featured>True</featured><audio_codec>uncompressed</audio_codec><id href="/stream/show/1215397952.xml">1215397952</id><category>gaming</category><title>Waiting to stream LA Noire so I don't get rock-raped</title><video_height>720</video_height><instant_replicate>False</instant_replicate><recorder>77408</recorder><site_count>80</site_count><embed_enabled>True</embed_enabled><up_time>Mon May 16 20:31:59 2011</up_time><filtered_on>1305597538</filtered_on><meta_game>L.A. Noire</meta_game><format>live</format><channel_count>100</channel_count><embed_count>16</embed_count><abuse_reported>False</abuse_reported><video_codec>AVC</video_codec><directory_hidden>False</directory_hidden><video_width>1280</video_width><geo>US</geo><embed_ratio>0.16666666666666666667</embed_ratio><name href="/stream/show/live_user_glansberggaming.xml">live_user_glansberggaming</name><language>en</language><stream_count>96</stream_count><video_bitrate>957.3984375</video_bitrate>
+<channel>
+  <subcategory>other_gaming</subcategory>
+  <category>gaming</category>
+  <id>20661353</id>
+  <login>glansberggaming</login>
+  <title>Glansberg Gaming</title>
+  <status>Really Rockstar?</status>
+  <tags nil="true"></tags>
+  <producer>true</producer>
+  <category_title>Gaming</category_title>
+  <subcategory_title>Other Gaming</subcategory_title>
+  <producer>true</producer>
+  <language>en</language>
+  <timezone>America/Los_Angeles</timezone>
+  <channel_url>http://www.justin.tv/glansberggaming</channel_url>
+  <mature>true</mature>
+  <image_url_huge>http://static-cdn.jtvnw.net/jtv_user_pictures/glansberggaming-profile_image-0e6a59004f921eb9-600x600.jpeg</image_url_huge>
+  <image_url_large>http://static-cdn.jtvnw.net/jtv_user_pictures/glansberggaming-profile_image-0e6a59004f921eb9-300x300.jpeg</image_url_large>
+  <image_url_medium>http://static-cdn.jtvnw.net/jtv_user_pictures/glansberggaming-profile_image-0e6a59004f921eb9-150x150.jpeg</image_url_medium>
+  <image_url_small>http://static-cdn.jtvnw.net/jtv_user_pictures/glansberggaming-profile_image-0e6a59004f921eb9-70x70.jpeg</image_url_small>
+  <image_url_tiny>http://static-cdn.jtvnw.net/jtv_user_pictures/glansberggaming-profile_image-0e6a59004f921eb9-50x50.jpeg</image_url_tiny>
+  <screen_cap_url_huge>http://static-cdn.jtvnw.net/previews/live_user_glansberggaming-630x473.jpg</screen_cap_url_huge>
+  <screen_cap_url_large>http://static-cdn.jtvnw.net/previews/live_user_glansberggaming-320x240.jpg</screen_cap_url_large>
+  <screen_cap_url_medium>http://static-cdn.jtvnw.net/previews/live_user_glansberggaming-150x113.jpg</screen_cap_url_medium>
+  <screen_cap_url_small>http://static-cdn.jtvnw.net/previews/live_user_glansberggaming-70x53.jpg</screen_cap_url_small>
+  <embed_enabled>true</embed_enabled>
+  <embed_code>    &lt;object type=&quot;application/x-shockwave-flash&quot; height=&quot;295&quot; width=&quot;353&quot; id=&quot;live_embed_player_flash&quot; data=&quot;http://www.justin.tv/widgets/live_embed_player.swf?channel=glansberggaming&quot; bgcolor=&quot;#000000&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.justin.tv/widgets/live_embed_player.swf&quot; /&gt;&lt;param name=&quot;flashvars&quot; value=&quot;start_volume=25&amp;channel=glansberggaming&amp;auto_play=false&quot; /&gt;&lt;/object&gt;
+</embed_code>
+  <views_count>&lt;&amp; get mongo users.glansberggaming.views_count 0 &amp;&gt;</views_count>
+</channel>
+<broadcaster>fme</broadcaster><updated_on>Tue May 17 02:53:58 2011</updated_on><channel_view_count>32993</channel_view_count>
+</stream>
+<stream>
+<subcategory>strategy</subcategory><stream_type>live</stream_type><broadcast_part>1</broadcast_part><featured>False</featured><audio_codec>uncompressed</audio_codec><id href="/stream/show/1216283744.xml">1216283744</id><category>gaming</category><title>SenslideR's Games</title><video_height>720</video_height><instant_replicate>False</instant_replicate><recorder>76528</recorder><site_count>0</site_count><embed_enabled>True</embed_enabled><up_time>Tue May 17 02:38:37 2011</up_time><filtered_on>1305581506</filtered_on><meta_game>StarCraft II: Wings of Liberty</meta_game><format>live</format><channel_count>43</channel_count><embed_count>46</embed_count><abuse_reported>False</abuse_reported><video_codec>AVC</video_codec><directory_hidden>False</directory_hidden><video_width>1280</video_width><geo>RU</geo><embed_ratio>1.00000000000000000000</embed_ratio><name href="/stream/show/live_user_senslider.xml">live_user_senslider</name><language>ru</language><stream_count>46</stream_count><video_bitrate>1175.4375</video_bitrate>
+<channel>
+  <subcategory>strategy</subcategory>
+  <category>gaming</category>
+  <id>12982833</id>
+  <login>senslider</login>
+  <title>SenslideR</title>
+  <status>SenslideR's Games</status>
+  <tags></tags>
+  <producer>false</producer>
+  <category_title>Gaming</category_title>
+  <subcategory_title>Strategy</subcategory_title>
+  <producer>false</producer>
+  <language>ru</language>
+  <timezone>America/Los_Angeles</timezone>
+  <channel_url>http://www.justin.tv/senslider</channel_url>
+  <mature nil="true"></mature>
+  <image_url_huge>http://static-cdn.jtvnw.net/jtv_user_pictures/senslider-profile_image-6aa93346616b4d70-600x600.jpeg</image_url_huge>
+  <image_url_large>http://static-cdn.jtvnw.net/jtv_user_pictures/senslider-profile_image-6aa93346616b4d70-300x300.jpeg</image_url_large>
+  <image_url_medium>http://static-cdn.jtvnw.net/jtv_user_pictures/senslider-profile_image-6aa93346616b4d70-150x150.jpeg</image_url_medium>
+  <image_url_small>http://static-cdn.jtvnw.net/jtv_user_pictures/senslider-profile_image-6aa93346616b4d70-70x70.jpeg</image_url_small>
+  <image_url_tiny>http://static-cdn.jtvnw.net/jtv_user_pictures/senslider-profile_image-6aa93346616b4d70-50x50.jpeg</image_url_tiny>
+  <screen_cap_url_huge>http://static-cdn.jtvnw.net/previews/live_user_senslider-630x473.jpg</screen_cap_url_huge>
+  <screen_cap_url_large>http://static-cdn.jtvnw.net/previews/live_user_senslider-320x240.jpg</screen_cap_url_large>
+  <screen_cap_url_medium>http://static-cdn.jtvnw.net/previews/live_user_senslider-150x113.jpg</screen_cap_url_medium>
+  <screen_cap_url_small>http://static-cdn.jtvnw.net/previews/live_user_senslider-70x53.jpg</screen_cap_url_small>
+  <embed_enabled>true</embed_enabled>
+  <embed_code>    &lt;object type=&quot;application/x-shockwave-flash&quot; height=&quot;295&quot; width=&quot;353&quot; id=&quot;live_embed_player_flash&quot; data=&quot;http://www.justin.tv/widgets/live_embed_player.swf?channel=senslider&quot; bgcolor=&quot;#000000&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.justin.tv/widgets/live_embed_player.swf&quot; /&gt;&lt;param name=&quot;flashvars&quot; value=&quot;start_volume=25&amp;channel=senslider&amp;auto_play=false&quot; /&gt;&lt;/object&gt;
+</embed_code>
+  <views_count>&lt;&amp; get mongo users.senslider.views_count 0 &amp;&gt;</views_count>
+</channel>
+<broadcaster>fme</broadcaster><updated_on>Tue May 17 02:53:35 2011</updated_on><channel_view_count>84920</channel_view_count>
+</stream>
+<stream>
+<subcategory>other_gaming</subcategory><stream_type>live</stream_type><broadcast_part>1</broadcast_part><featured>False</featured><audio_codec>uncompressed</audio_codec><id href="/stream/show/1216193632.xml">1216193632</id><category>gaming</category><title>Retro Gaming</title><video_height>360</video_height><instant_replicate>False</instant_replicate><recorder>78480</recorder><site_count>31</site_count><embed_enabled>True</embed_enabled><up_time>Tue May 17 01:57:34 2011</up_time><filtered_on>1305542314</filtered_on><format>live</format><channel_count>36</channel_count><embed_count>4</embed_count><abuse_reported>False</abuse_reported><video_codec>AVC</video_codec><directory_hidden>False</directory_hidden><video_width>640</video_width><geo>US</geo><embed_ratio>0.11428571428571428571</embed_ratio><name href="/stream/show/live_user_gtorules.xml">live_user_gtorules</name><language>en</language><stream_count>35</stream_count><video_bitrate>559.0859375</video_bitrate><persistent>t</persistent>
+<channel>
+  <subcategory>other_gaming</subcategory>
+  <category>gaming</category>
+  <id>12908747</id>
+  <login>gtorules</login>
+  <title>Gaming With GTORules</title>
+  <status>Retro Gaming</status>
+  <tags>a anime b c complete d e f g game games great gto h i j k l m moon n o onizuka p q r s sailor series shooter t teacher u v video w x y z</tags>
+  <producer>false</producer>
+  <category_title>Gaming</category_title>
+  <subcategory_title>Other Gaming</subcategory_title>
+  <producer>false</producer>
+  <language>en</language>
+  <timezone>America/Detroit</timezone>
+  <channel_url>http://www.justin.tv/gtorules</channel_url>
+  <mature>true</mature>
+  <image_url_huge>http://static-cdn.jtvnw.net/jtv_user_pictures/gtorules-profile_image-23ca4c94accf82f7-600x600.png</image_url_huge>
+  <image_url_large>http://static-cdn.jtvnw.net/jtv_user_pictures/gtorules-profile_image-23ca4c94accf82f7-300x300.png</image_url_large>
+  <image_url_medium>http://static-cdn.jtvnw.net/jtv_user_pictures/gtorules-profile_image-23ca4c94accf82f7-150x150.png</image_url_medium>
+  <image_url_small>http://static-cdn.jtvnw.net/jtv_user_pictures/gtorules-profile_image-23ca4c94accf82f7-70x70.png</image_url_small>
+  <image_url_tiny>http://static-cdn.jtvnw.net/jtv_user_pictures/gtorules-profile_image-23ca4c94accf82f7-50x50.png</image_url_tiny>
+  <screen_cap_url_huge>http://static-cdn.jtvnw.net/previews/live_user_gtorules-630x473.jpg</screen_cap_url_huge>
+  <screen_cap_url_large>http://static-cdn.jtvnw.net/previews/live_user_gtorules-320x240.jpg</screen_cap_url_large>
+  <screen_cap_url_medium>http://static-cdn.jtvnw.net/previews/live_user_gtorules-150x113.jpg</screen_cap_url_medium>
+  <screen_cap_url_small>http://static-cdn.jtvnw.net/previews/live_user_gtorules-70x53.jpg</screen_cap_url_small>
+  <embed_enabled>true</embed_enabled>
+  <embed_code>    &lt;object type=&quot;application/x-shockwave-flash&quot; height=&quot;295&quot; width=&quot;353&quot; id=&quot;live_embed_player_flash&quot; data=&quot;http://www.justin.tv/widgets/live_embed_player.swf?channel=gtorules&quot; bgcolor=&quot;#000000&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.justin.tv/widgets/live_embed_player.swf&quot; /&gt;&lt;param name=&quot;flashvars&quot; value=&quot;start_volume=25&amp;channel=gtorules&amp;auto_play=false&quot; /&gt;&lt;/object&gt;
+</embed_code>
+  <views_count>&lt;&amp; get mongo users.gtorules.views_count 0 &amp;&gt;</views_count>
+</channel>
+<broadcaster>fme</broadcaster><updated_on>Tue May 17 02:53:31 2011</updated_on><channel_view_count>1360843</channel_view_count>
+</stream>
+<stream>
+<subcategory>playstation</subcategory><stream_type>live</stream_type><broadcast_part>1</broadcast_part><featured>True</featured><audio_codec>uncompressed</audio_codec><id href="/stream/show/1216308352.xml">1216308352</id><category>gaming</category><title>---Ps3 and 360 GaminG---</title><video_height>432</video_height><instant_replicate>False</instant_replicate><recorder>78832</recorder><site_count>19</site_count><embed_enabled>False</embed_enabled><up_time>Tue May 17 02:50:08 2011</up_time><filtered_on>1305593821</filtered_on><meta_game>Call of Duty: Black Ops</meta_game><format>live</format><channel_count>24</channel_count><embed_count>4</embed_count><abuse_reported>False</abuse_reported><video_codec>AVC</video_codec><directory_hidden>False</directory_hidden><video_width>768</video_width><geo>FR</geo><embed_ratio>0.17391304347826086957</embed_ratio><name href="/stream/show/live_user_dalkai_59.xml">live_user_dalkai_59</name><language>fr</language><stream_count>23</stream_count><video_bitrate>80.8828125</video_bitrate>
+<channel>
+  <subcategory>playstation</subcategory>
+  <category>gaming</category>
+  <id>19231267</id>
+  <login>dalkai_59</login>
+  <title>dalkai_59</title>
+  <status>---Ps3 and 360 GaminG---</status>
+  <tags nil="true"></tags>
+  <producer>true</producer>
+  <category_title>Gaming</category_title>
+  <subcategory_title>Playstation</subcategory_title>
+  <producer>true</producer>
+  <language>fr</language>
+  <timezone>America/Los_Angeles</timezone>
+  <channel_url>http://www.justin.tv/dalkai_59</channel_url>
+  <mature>true</mature>
+  <image_url_huge>http://static-cdn.jtvnw.net/jtv_user_pictures/dalkai_59-profile_image-c8adb4d84ef267a0-600x600.jpeg</image_url_huge>
+  <image_url_large>http://static-cdn.jtvnw.net/jtv_user_pictures/dalkai_59-profile_image-c8adb4d84ef267a0-300x300.jpeg</image_url_large>
+  <image_url_medium>http://static-cdn.jtvnw.net/jtv_user_pictures/dalkai_59-profile_image-c8adb4d84ef267a0-150x150.jpeg</image_url_medium>
+  <image_url_small>http://static-cdn.jtvnw.net/jtv_user_pictures/dalkai_59-profile_image-c8adb4d84ef267a0-70x70.jpeg</image_url_small>
+  <image_url_tiny>http://static-cdn.jtvnw.net/jtv_user_pictures/dalkai_59-profile_image-c8adb4d84ef267a0-50x50.jpeg</image_url_tiny>
+  <screen_cap_url_huge>http://static-cdn.jtvnw.net/previews/live_user_dalkai_59-630x473.jpg</screen_cap_url_huge>
+  <screen_cap_url_large>http://static-cdn.jtvnw.net/previews/live_user_dalkai_59-320x240.jpg</screen_cap_url_large>
+  <screen_cap_url_medium>http://static-cdn.jtvnw.net/previews/live_user_dalkai_59-150x113.jpg</screen_cap_url_medium>
+  <screen_cap_url_small>http://static-cdn.jtvnw.net/previews/live_user_dalkai_59-70x53.jpg</screen_cap_url_small>
+  <embed_enabled>false</embed_enabled>
+  <embed_code>    &lt;object type=&quot;application/x-shockwave-flash&quot; height=&quot;295&quot; width=&quot;353&quot; id=&quot;live_embed_player_flash&quot; data=&quot;http://www.justin.tv/widgets/live_embed_player.swf?channel=dalkai_59&quot; bgcolor=&quot;#000000&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.justin.tv/widgets/live_embed_player.swf&quot; /&gt;&lt;param name=&quot;flashvars&quot; value=&quot;start_volume=25&amp;channel=dalkai_59&amp;auto_play=false&quot; /&gt;&lt;/object&gt;
+</embed_code>
+  <views_count>&lt;&amp; get mongo users.dalkai_59.views_count 0 &amp;&gt;</views_count>
+</channel>
+<broadcaster>fme</broadcaster><updated_on>Tue May 17 02:53:32 2011</updated_on><channel_view_count>115680</channel_view_count>
+</stream>
+<stream>
+<subcategory>other_gaming</subcategory><stream_type>live</stream_type><broadcast_part>1</broadcast_part><featured>False</featured><audio_codec>uncompressed</audio_codec><id href="/stream/show/1216087888.xml">1216087888</id><category>gaming</category><title>:: IWBTG Game's ::</title><video_height>432</video_height><instant_replicate>False</instant_replicate><recorder>79104</recorder><site_count>8</site_count><embed_enabled>True</embed_enabled><up_time>Tue May 17 01:09:06 2011</up_time><filtered_on>1305621144</filtered_on><format>live</format><channel_count>12</channel_count><embed_count>4</embed_count><abuse_reported>False</abuse_reported><video_codec>AVC</video_codec><directory_hidden>False</directory_hidden><video_width>768</video_width><geo>US</geo><embed_ratio>0.33333333333333333333</embed_ratio><name href="/stream/show/live_user_logi__bear.xml">live_user_logi__bear</name><language>en</language><stream_count>12</stream_count><video_bitrate>161.6484375</video_bitrate>
+<channel>
+  <subcategory>other_gaming</subcategory>
+  <category>gaming</category>
+  <id>21600792</id>
+  <login>logi__bear</login>
+  <title>LoGi__BeaR </title>
+  <status>:: IWBTG Game's ::</status>
+  <tags nil="true"></tags>
+  <producer>false</producer>
+  <category_title>Gaming</category_title>
+  <subcategory_title>Other Gaming</subcategory_title>
+  <producer>false</producer>
+  <language>en</language>
+  <timezone>America/Los_Angeles</timezone>
+  <channel_url>http://www.justin.tv/logi__bear</channel_url>
+  <mature>true</mature>
+  <image_url_huge>http://static-cdn.jtvnw.net/jtv_user_pictures/logi__bear-profile_image-57996d8640e3ee58-600x600.png</image_url_huge>
+  <image_url_large>http://static-cdn.jtvnw.net/jtv_user_pictures/logi__bear-profile_image-57996d8640e3ee58-300x300.png</image_url_large>
+  <image_url_medium>http://static-cdn.jtvnw.net/jtv_user_pictures/logi__bear-profile_image-57996d8640e3ee58-150x150.png</image_url_medium>
+  <image_url_small>http://static-cdn.jtvnw.net/jtv_user_pictures/logi__bear-profile_image-57996d8640e3ee58-70x70.png</image_url_small>
+  <image_url_tiny>http://static-cdn.jtvnw.net/jtv_user_pictures/logi__bear-profile_image-57996d8640e3ee58-50x50.png</image_url_tiny>
+  <screen_cap_url_huge>http://static-cdn.jtvnw.net/previews/live_user_logi__bear-630x473.jpg</screen_cap_url_huge>
+  <screen_cap_url_large>http://static-cdn.jtvnw.net/previews/live_user_logi__bear-320x240.jpg</screen_cap_url_large>
+  <screen_cap_url_medium>http://static-cdn.jtvnw.net/previews/live_user_logi__bear-150x113.jpg</screen_cap_url_medium>
+  <screen_cap_url_small>http://static-cdn.jtvnw.net/previews/live_user_logi__bear-70x53.jpg</screen_cap_url_small>
+  <embed_enabled>true</embed_enabled>
+  <embed_code>    &lt;object type=&quot;application/x-shockwave-flash&quot; height=&quot;295&quot; width=&quot;353&quot; id=&quot;live_embed_player_flash&quot; data=&quot;http://www.justin.tv/widgets/live_embed_player.swf?channel=logi__bear&quot; bgcolor=&quot;#000000&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.justin.tv/widgets/live_embed_player.swf&quot; /&gt;&lt;param name=&quot;flashvars&quot; value=&quot;start_volume=25&amp;channel=logi__bear&amp;auto_play=false&quot; /&gt;&lt;/object&gt;
+</embed_code>
+  <views_count>&lt;&amp; get mongo users.logi__bear.views_count 0 &amp;&gt;</views_count>
+</channel>
+<broadcaster>fme</broadcaster><updated_on>Tue May 17 02:53:34 2011</updated_on><channel_view_count>2582</channel_view_count>
+</stream>
+<stream>
+<subcategory>other_gaming</subcategory><stream_type>live</stream_type><broadcast_part>3</broadcast_part><featured>False</featured><audio_codec>uncompressed</audio_codec><id href="/stream/show/1215464176.xml">1215464176</id><category>gaming</category><title>Lets Play BRINK by Uncensored-Gaming.eu</title><video_height>432</video_height><instant_replicate>False</instant_replicate><recorder>77728</recorder><site_count>8</site_count><embed_enabled>True</embed_enabled><up_time>Mon May 16 20:55:27 2011</up_time><filtered_on>1305560469</filtered_on><format>live</format><channel_count>12</channel_count><embed_count>4</embed_count><abuse_reported>False</abuse_reported><video_codec>AVC</video_codec><directory_hidden>False</directory_hidden><video_width>768</video_width><geo>DE</geo><embed_ratio>0.33333333333333333333</embed_ratio><name href="/stream/show/live_user_vokoun.xml">live_user_vokoun</name><language>de</language><stream_count>12</stream_count><video_bitrate>517.84375</video_bitrate>
+<channel>
+  <subcategory>other_gaming</subcategory>
+  <category>gaming</category>
+  <id>19884187</id>
+  <login>vokoun</login>
+  <title>Uncensored-Gaming.eu</title>
+  <status>Lets Play CSS by Uncensored-Gaming.eu</status>
+  <tags nil="true"></tags>
+  <producer>false</producer>
+  <category_title>Gaming</category_title>
+  <subcategory_title>Other Gaming</subcategory_title>
+  <producer>false</producer>
+  <language>de</language>
+  <timezone>America/Los_Angeles</timezone>
+  <channel_url>http://www.justin.tv/vokoun</channel_url>
+  <mature>true</mature>
+  <image_url_huge>http://static-cdn.jtvnw.net/jtv_user_pictures/vokoun-profile_image-3cc66e0dea6acaaa-600x600.jpeg</image_url_huge>
+  <image_url_large>http://static-cdn.jtvnw.net/jtv_user_pictures/vokoun-profile_image-3cc66e0dea6acaaa-300x300.jpeg</image_url_large>
+  <image_url_medium>http://static-cdn.jtvnw.net/jtv_user_pictures/vokoun-profile_image-3cc66e0dea6acaaa-150x150.jpeg</image_url_medium>
+  <image_url_small>http://static-cdn.jtvnw.net/jtv_user_pictures/vokoun-profile_image-3cc66e0dea6acaaa-70x70.jpeg</image_url_small>
+  <image_url_tiny>http://static-cdn.jtvnw.net/jtv_user_pictures/vokoun-profile_image-3cc66e0dea6acaaa-50x50.jpeg</image_url_tiny>
+  <screen_cap_url_huge>http://static-cdn.jtvnw.net/previews/live_user_vokoun-630x473.jpg</screen_cap_url_huge>
+  <screen_cap_url_large>http://static-cdn.jtvnw.net/previews/live_user_vokoun-320x240.jpg</screen_cap_url_large>
+  <screen_cap_url_medium>http://static-cdn.jtvnw.net/previews/live_user_vokoun-150x113.jpg</screen_cap_url_medium>
+  <screen_cap_url_small>http://static-cdn.jtvnw.net/previews/live_user_vokoun-70x53.jpg</screen_cap_url_small>
+  <embed_enabled>true</embed_enabled>
+  <embed_code>    &lt;object type=&quot;application/x-shockwave-flash&quot; height=&quot;295&quot; width=&quot;353&quot; id=&quot;live_embed_player_flash&quot; data=&quot;http://www.justin.tv/widgets/live_embed_player.swf?channel=vokoun&quot; bgcolor=&quot;#000000&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.justin.tv/widgets/live_embed_player.swf&quot; /&gt;&lt;param name=&quot;flashvars&quot; value=&quot;start_volume=25&amp;channel=vokoun&amp;auto_play=false&quot; /&gt;&lt;/object&gt;
+</embed_code>
+  <views_count>&lt;&amp; get mongo users.vokoun.views_count 0 &amp;&gt;</views_count>
+</channel>
+<broadcaster>fme</broadcaster><updated_on>Tue May 17 02:53:44 2011</updated_on><channel_view_count>10488</channel_view_count>
+</stream>
+<stream>
+<subcategory>xbox</subcategory><stream_type>live</stream_type><broadcast_part>2</broadcast_part><featured>True</featured><audio_codec>uncompressed</audio_codec><id href="/stream/show/1215862848.xml">1215862848</id><category>gaming</category><title>Mortal Kombat! (360) 24/7 Video game music after I'm done!</title><stats_email>kevin@justin.tv</stats_email><channel_count>7</channel_count><video_height>240</video_height><instant_replicate>False</instant_replicate><recorder>76176</recorder><site_count>5</site_count><embed_enabled>True</embed_enabled><up_time>Mon May 16 23:29:06 2011</up_time><filtered_on>1305552423</filtered_on><meta_game>Mortal Kombat</meta_game><format>live</format><embed_count>4</embed_count><abuse_reported>False</abuse_reported><video_codec>AVC</video_codec><directory_hidden>False</directory_hidden><video_width>400</video_width><geo>US</geo><embed_ratio>0.44444444444444444444</embed_ratio><name href="/stream/show/live_user_fna_gaming.xml">live_user_fna_gaming</name><language>en</language><stream_count>9</stream_count><video_bitrate>38.4453125</video_bitrate>
+<channel>
+  <subcategory>xbox</subcategory>
+  <category>gaming</category>
+  <id>5313783</id>
+  <login>fna_gaming</login>
+  <title>FNA's Arcade Room </title>
+  <status>Mortal Kombat! (360) 24/7 Video game music after I'm done!</status>
+  <tags>1 2 2010 3 4 5 arcade ball dragon evil fight fighter football godfather jill madden mame movies ncaa nfl night raw resident round smackdown sports starcraft street strike third tibbins vs wrestling xbox360</tags>
+  <producer>true</producer>
+  <category_title>Gaming</category_title>
+  <subcategory_title>Xbox</subcategory_title>
+  <producer>true</producer>
+  <language>en</language>
+  <timezone>US/Arizona</timezone>
+  <channel_url>http://www.justin.tv/fna_gaming</channel_url>
+  <mature nil="true"></mature>
+  <image_url_huge>http://static-cdn.jtvnw.net/jtv_user_pictures/fna_gaming-profile_image-b44500eff20eb6fa-600x600.jpeg</image_url_huge>
+  <image_url_large>http://static-cdn.jtvnw.net/jtv_user_pictures/fna_gaming-profile_image-b44500eff20eb6fa-300x300.jpeg</image_url_large>
+  <image_url_medium>http://static-cdn.jtvnw.net/jtv_user_pictures/fna_gaming-profile_image-b44500eff20eb6fa-150x150.jpeg</image_url_medium>
+  <image_url_small>http://static-cdn.jtvnw.net/jtv_user_pictures/fna_gaming-profile_image-b44500eff20eb6fa-70x70.jpeg</image_url_small>
+  <image_url_tiny>http://static-cdn.jtvnw.net/jtv_user_pictures/fna_gaming-profile_image-b44500eff20eb6fa-50x50.jpeg</image_url_tiny>
+  <screen_cap_url_huge>http://static-cdn.jtvnw.net/previews/live_user_fna_gaming-630x473.jpg</screen_cap_url_huge>
+  <screen_cap_url_large>http://static-cdn.jtvnw.net/previews/live_user_fna_gaming-320x240.jpg</screen_cap_url_large>
+  <screen_cap_url_medium>http://static-cdn.jtvnw.net/previews/live_user_fna_gaming-150x113.jpg</screen_cap_url_medium>
+  <screen_cap_url_small>http://static-cdn.jtvnw.net/previews/live_user_fna_gaming-70x53.jpg</screen_cap_url_small>
+  <embed_enabled>true</embed_enabled>
+  <embed_code>    &lt;object type=&quot;application/x-shockwave-flash&quot; height=&quot;295&quot; width=&quot;353&quot; id=&quot;live_embed_player_flash&quot; data=&quot;http://www.justin.tv/widgets/live_embed_player.swf?channel=fna_gaming&quot; bgcolor=&quot;#000000&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.justin.tv/widgets/live_embed_player.swf&quot; /&gt;&lt;param name=&quot;flashvars&quot; value=&quot;start_volume=25&amp;channel=fna_gaming&amp;auto_play=false&quot; /&gt;&lt;/object&gt;
+</embed_code>
+  <views_count>&lt;&amp; get mongo users.fna_gaming.views_count 0 &amp;&gt;</views_count>
+</channel>
+<broadcaster>fme</broadcaster><updated_on>Tue May 17 02:53:42 2011</updated_on><channel_view_count>432005</channel_view_count>
+</stream>
+<stream>
+<subcategory>other_gaming</subcategory><stream_type>live</stream_type><broadcast_part>2</broadcast_part><featured>False</featured><audio_codec>mp3</audio_codec><id href="/stream/show/1215959952.xml">1215959952</id><category>gaming</category><title>Bronze terran</title><video_height>720</video_height><instant_replicate>False</instant_replicate><recorder>78272</recorder><site_count>0</site_count><embed_enabled>True</embed_enabled><up_time>Tue May 17 00:10:16 2011</up_time><format>live</format><channel_count>1</channel_count><embed_count>1</embed_count><abuse_reported>False</abuse_reported><video_codec>VP6</video_codec><directory_hidden>False</directory_hidden><video_width>1280</video_width><geo>US</geo><embed_ratio>1.00000000000000000000</embed_ratio><name href="/stream/show/live_user_ms_gaming.xml">live_user_ms_gaming</name><language>en</language><stream_count>1</stream_count><video_bitrate>249.078125</video_bitrate>
+<channel>
+  <subcategory>other_gaming</subcategory>
+  <category>gaming</category>
+  <id>21402117</id>
+  <login>ms_gaming</login>
+  <title>Misfit_Slayers Gaming</title>
+  <status>Bronze terran</status>
+  <tags nil="true"></tags>
+  <producer>false</producer>
+  <category_title>Gaming</category_title>
+  <subcategory_title>Other Gaming</subcategory_title>
+  <producer>false</producer>
+  <language>en</language>
+  <timezone>America/New_York</timezone>
+  <channel_url>http://www.justin.tv/ms_gaming</channel_url>
+  <mature nil="true"></mature>
+  <image_url_huge>http://static-cdn.jtvnw.net/jtv_user_pictures/ms_gaming-profile_image-f75fc351938b849f-600x600.jpeg</image_url_huge>
+  <image_url_large>http://static-cdn.jtvnw.net/jtv_user_pictures/ms_gaming-profile_image-f75fc351938b849f-300x300.jpeg</image_url_large>
+  <image_url_medium>http://static-cdn.jtvnw.net/jtv_user_pictures/ms_gaming-profile_image-f75fc351938b849f-150x150.jpeg</image_url_medium>
+  <image_url_small>http://static-cdn.jtvnw.net/jtv_user_pictures/ms_gaming-profile_image-f75fc351938b849f-70x70.jpeg</image_url_small>
+  <image_url_tiny>http://static-cdn.jtvnw.net/jtv_user_pictures/ms_gaming-profile_image-f75fc351938b849f-50x50.jpeg</image_url_tiny>
+  <screen_cap_url_huge>http://static-cdn.jtvnw.net/previews/live_user_ms_gaming-630x473.jpg</screen_cap_url_huge>
+  <screen_cap_url_large>http://static-cdn.jtvnw.net/previews/live_user_ms_gaming-320x240.jpg</screen_cap_url_large>
+  <screen_cap_url_medium>http://static-cdn.jtvnw.net/previews/live_user_ms_gaming-150x113.jpg</screen_cap_url_medium>
+  <screen_cap_url_small>http://static-cdn.jtvnw.net/previews/live_user_ms_gaming-70x53.jpg</screen_cap_url_small>
+  <embed_enabled>true</embed_enabled>
+  <embed_code>    &lt;object type=&quot;application/x-shockwave-flash&quot; height=&quot;295&quot; width=&quot;353&quot; id=&quot;live_embed_player_flash&quot; data=&quot;http://www.justin.tv/widgets/live_embed_player.swf?channel=ms_gaming&quot; bgcolor=&quot;#000000&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.justin.tv/widgets/live_embed_player.swf&quot; /&gt;&lt;param name=&quot;flashvars&quot; value=&quot;start_volume=25&amp;channel=ms_gaming&amp;auto_play=false&quot; /&gt;&lt;/object&gt;
+</embed_code>
+  <views_count>&lt;&amp; get mongo users.ms_gaming.views_count 0 &amp;&gt;</views_count>
+</channel>
+<broadcaster>fme</broadcaster><updated_on>Tue May 17 02:53:46 2011</updated_on><channel_view_count>3131</channel_view_count>
+</stream>
+<stream>
+<subcategory>strategy</subcategory><stream_type>live</stream_type><broadcast_part>1</broadcast_part><featured>False</featured><audio_codec>mp3</audio_codec><id href="/stream/show/1216243312.xml">1216243312</id><category>gaming</category><title>Random Games</title><video_height>1024</video_height><instant_replicate>False</instant_replicate><recorder>78000</recorder><site_count>1</site_count><embed_enabled>True</embed_enabled><up_time>Tue May 17 02:19:29 2011</up_time><meta_game>StarCraft II: Wings of Liberty</meta_game><format>live</format><channel_count>1</channel_count><embed_count>0</embed_count><abuse_reported>False</abuse_reported><video_codec>AVC</video_codec><directory_hidden>False</directory_hidden><video_width>1280</video_width><geo>SE</geo><embed_ratio>0.00000000000000000000</embed_ratio><name href="/stream/show/live_user_staarh.xml">live_user_staarh</name><language>sv</language><stream_count>1</stream_count><video_bitrate>623.296875</video_bitrate>
+<channel>
+  <subcategory>strategy</subcategory>
+  <category>gaming</category>
+  <id>20544080</id>
+  <login>staarh</login>
+  <title>Staarh - Just playing some games.</title>
+  <status>Random Games</status>
+  <tags nil="true"></tags>
+  <producer>false</producer>
+  <category_title>Gaming</category_title>
+  <subcategory_title>Strategy</subcategory_title>
+  <producer>false</producer>
+  <language>sv</language>
+  <timezone>Europe/Stockholm</timezone>
+  <channel_url>http://www.justin.tv/staarh</channel_url>
+  <mature nil="true"></mature>
+  <image_url_huge>http://static-cdn.jtvnw.net/jtv_user_pictures/staarh-profile_image-5996beac568a5d65-600x600.jpeg</image_url_huge>
+  <image_url_large>http://static-cdn.jtvnw.net/jtv_user_pictures/staarh-profile_image-5996beac568a5d65-300x300.jpeg</image_url_large>
+  <image_url_medium>http://static-cdn.jtvnw.net/jtv_user_pictures/staarh-profile_image-5996beac568a5d65-150x150.jpeg</image_url_medium>
+  <image_url_small>http://static-cdn.jtvnw.net/jtv_user_pictures/staarh-profile_image-5996beac568a5d65-70x70.jpeg</image_url_small>
+  <image_url_tiny>http://static-cdn.jtvnw.net/jtv_user_pictures/staarh-profile_image-5996beac568a5d65-50x50.jpeg</image_url_tiny>
+  <screen_cap_url_huge>http://static-cdn.jtvnw.net/previews/live_user_staarh-630x473.jpg</screen_cap_url_huge>
+  <screen_cap_url_large>http://static-cdn.jtvnw.net/previews/live_user_staarh-320x240.jpg</screen_cap_url_large>
+  <screen_cap_url_medium>http://static-cdn.jtvnw.net/previews/live_user_staarh-150x113.jpg</screen_cap_url_medium>
+  <screen_cap_url_small>http://static-cdn.jtvnw.net/previews/live_user_staarh-70x53.jpg</screen_cap_url_small>
+  <embed_enabled>true</embed_enabled>
+  <embed_code>    &lt;object type=&quot;application/x-shockwave-flash&quot; height=&quot;295&quot; width=&quot;353&quot; id=&quot;live_embed_player_flash&quot; data=&quot;http://www.justin.tv/widgets/live_embed_player.swf?channel=staarh&quot; bgcolor=&quot;#000000&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.justin.tv/widgets/live_embed_player.swf&quot; /&gt;&lt;param name=&quot;flashvars&quot; value=&quot;start_volume=25&amp;channel=staarh&amp;auto_play=false&quot; /&gt;&lt;/object&gt;
+</embed_code>
+  <views_count>&lt;&amp; get mongo users.staarh.views_count 0 &amp;&gt;</views_count>
+</channel>
+<broadcaster>fme</broadcaster><updated_on>Tue May 17 02:53:48 2011</updated_on><channel_view_count>101</channel_view_count>
+</stream>
+
+</streams>

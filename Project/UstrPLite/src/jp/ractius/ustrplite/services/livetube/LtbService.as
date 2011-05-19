@@ -1,5 +1,6 @@
 package jp.ractius.ustrplite.services.livetube 
 {
+	import jp.ractius.ustrplite.player.Player;
 	import jp.ractius.ustrplite.services.common.BaseService;
 	import jp.ractius.ustrplite.services.common.channel.BaseChannelQuery;
 	import jp.ractius.ustrplite.services.IChannelQuery;
@@ -22,7 +23,7 @@ package jp.ractius.ustrplite.services.livetube
 		
 		override protected function createChannelQuery():IChannelQuery	{ return new BaseChannelQuery(); }
 		
-		override public function createPlayerOption():IPlayerOption		{ return new PlayerOption(); }
+		override public function createPlayerOption( player:Player ):IPlayerOption	{ return new PlayerOption( player ); }
 		
 		override public function createChannelUri():IChannelUri			{ return new ChannelUri(); }
 		
