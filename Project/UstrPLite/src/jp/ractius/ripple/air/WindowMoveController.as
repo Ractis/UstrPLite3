@@ -13,7 +13,6 @@ package jp.ractius.ripple.air
 		public function WindowMoveController( tgt:InteractiveObject, bounds:WindowBounds ) 
 		{
 			super( tgt, bounds );
-			
 		}
 		
 		override protected function onAction( deltaPos:Point ):void 

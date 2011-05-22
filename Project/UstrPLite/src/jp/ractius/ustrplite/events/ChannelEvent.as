@@ -17,6 +17,7 @@ package jp.ractius.ustrplite.events
 		static public const CHANGE_USER_NAME:String		= "changeUserName";
 		static public const CHANGE_CHANNEL_ID:String 	= "changeChannelId";
 		static public const CHANGE_STATUS:String		= "changeStatus";
+		static public const CHANGE_FAVORITE:String		= "changeFavorite";
 		
 		public function ChannelEvent( type:String, bubbles:Boolean = false, cancelable:Boolean = false ) 
 		{

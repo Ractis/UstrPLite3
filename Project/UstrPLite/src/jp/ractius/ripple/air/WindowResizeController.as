@@ -63,8 +63,9 @@ package jp.ractius.ripple.air
 			}
 			
 			var deltaPos:Point = new Point();
-			if ( m_activeH ) deltaPos.x = _posXFromEdge( e.stageX );
-			if ( m_activeV ) deltaPos.y = _posYFromEdge( e.stageY );
+			
+			if ( m_activeH ) deltaPos.x = _posXFromEdge( e.stageX ) - m_lastMouseXFromEdge;
+			if ( m_activeV ) deltaPos.y = _posYFromEdge( e.stageY ) - m_lastMouseYFromEdge;
 			
 			onAction( deltaPos );
 			

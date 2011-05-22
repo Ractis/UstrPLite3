@@ -40,7 +40,7 @@ package jp.ractius.ustrplite.crostr.livetube
 		
 		private function _onLoadChannelPage( e:Event ):void 
 		{
-			e.target.removeEventListener( e.type, arguments.callee );
+			e.currentTarget.removeEventListener( e.type, arguments.callee );
 			
 			_playStream( e.target.streamUrl );
 		}

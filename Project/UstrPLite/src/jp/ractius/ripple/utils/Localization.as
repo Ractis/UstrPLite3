@@ -40,7 +40,11 @@ package jp.ractius.ripple.utils
 		
 		static public function getData( name:String ):Object
 		{
-			return _getDataImpl( s_data, name.split( "." ) );
+			var data:Object = _getDataImpl( s_data, name.split( "." ) );
+			
+			var dataString:String = String( data );
+			if ( dataString.indexOf( "#" ) == 0 )	return getData( dataString.substr( 1 ) );	// エイリアスを探す
+			else									return data;
 		}
 		
 		static private function _getDataImpl( currentNode:Object, path:Array ):Object

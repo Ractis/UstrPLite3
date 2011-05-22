@@ -13,11 +13,12 @@
 		<title>UstrPLite 3</title> 
 		<content>bin/UstrPLite.swf</content> 
 		<systemChrome>none</systemChrome> 
-		<transparent>false</transparent> 
+		<transparent>true</transparent> 
 		<visible>true</visible> 
 		<minimizable>true</minimizable> 
 		<maximizable>false</maximizable> 
 		<resizable>true</resizable> 
+		<minSize>350 500</minSize>
 	</initialWindow> 
 	
 	<!-- 

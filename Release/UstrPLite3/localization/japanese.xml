@@ -2,6 +2,24 @@
 <data>
 	<screenName>日本語</screenName>
 	
+	<general>
+		<play>再生</play>
+		<addFav>登録</addFav>
+	</general>
+	
+	<browser>
+		<control>
+			<play>
+				<label>#general.play</label>
+				<toolTip>チャンネルを再生</toolTip>
+			</play>
+			<addFav>
+				<label>#general.addFav</label>
+				<toolTip>お気に入りに登録</toolTip>
+			</addFav>
+		</control>
+	</browser>
+	
 	<player>
 		<menu>
 			<close>プレイヤーを閉じる</close>

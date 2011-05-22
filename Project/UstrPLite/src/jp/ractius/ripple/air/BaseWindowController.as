@@ -67,9 +67,11 @@ package jp.ractius.ripple.air
 		
 		private function _onMouseUp( e:MouseEvent ):void 
 		{
-			e.target.removeEventListener( e.type, arguments.callee );
+			e.currentTarget.removeEventListener( e.type, arguments.callee );
 			
 			m_isActive = false;
+			
+			updateLastMousePos( e );
 		}
 		
 		protected function get bounds():WindowBounds { return m_bounds; }

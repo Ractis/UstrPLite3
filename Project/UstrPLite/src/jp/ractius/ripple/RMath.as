@@ -12,6 +12,17 @@ package jp.ractius.ripple
 			
 		}
 		
+		static public function isEven( val:Number ):Boolean
+		{
+			var div2:Number = val / 2;
+			return div2 == Math.floor( div2 );
+		}
+		
+		static public function toRad( deg:Number ):Number
+		{
+			return deg / 180 * Math.PI;
+		}
+		
 		static public function clamp( val:Number, min:Number, max:Number ):Number
 		{
 			if		( val < min )	return min;

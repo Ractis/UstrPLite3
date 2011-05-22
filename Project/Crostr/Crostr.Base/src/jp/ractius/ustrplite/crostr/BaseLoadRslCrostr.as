@@ -31,7 +31,7 @@ package jp.ractius.ustrplite.crostr
 		
 		protected function onLoadRsl( e:Event ):void 
 		{
-			e.target.removeEventListener( e.type, arguments.callee );
+			e.currentTarget.removeEventListener( e.type, arguments.callee );
 			
 			// override me
 		}

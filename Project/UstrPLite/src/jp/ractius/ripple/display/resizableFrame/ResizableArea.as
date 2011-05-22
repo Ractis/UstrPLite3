@@ -19,8 +19,6 @@ package jp.ractius.ripple.display.resizableFrame
 		
 		public function ResizableArea( hori:String, vert:String, thickness:Number, cornerSize:Number ) 
 		{
-			alpha = 0;
-			
 			m_hori			= hori;
 			m_vert			= vert;
 			m_thickness		= thickness;

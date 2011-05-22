@@ -26,7 +26,8 @@ package jp.ractius.ustrplite.data.channel
 		private var m_hashTag:String;
 		private var m_imageUrl:String;
 		
-		private var m_status:String		= UstrpliteConstants.STATUS_UNKNOWN;
+		private var m_status:String			= UstrpliteConstants.STATUS_UNKNOWN;
+		private var m_isFavorite:Boolean	= false;
 		
 		private var m_exData:Dictionary = new Dictionary();
 		
@@ -151,6 +152,16 @@ package jp.ractius.ustrplite.data.channel
 			
 			m_imageUrl = value;
 			_fireEvent( ChannelEvent.CHANGE_IMAGE_URL );
+		}
+		
+		public function get isFavorite():Boolean { return m_isFavorite; }
+		
+		public function set isFavorite( value:Boolean ):void 
+		{
+			if ( m_isFavorite == value ) return;
+			
+			m_isFavorite = value;
+			_fireEvent( ChannelEvent.CHANGE_FAVORITE );
 		}
 		
 		public function get isExists():Boolean { return m_isExists; }

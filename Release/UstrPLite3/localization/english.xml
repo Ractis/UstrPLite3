@@ -2,6 +2,24 @@
 <data>
 	<screenName>English</screenName>
 	
+	<general>
+		<play>Play</play>
+		<addFav>AddFav</addFav>
+	</general>
+	
+	<browser>
+		<control>
+			<play>
+				<label>#general.play</label>
+				<toolTip>Play channel</toolTip>
+			</play>
+			<addFav>
+				<label>#general.addFav</label>
+				<toolTip>Add to favorites</toolTip>
+			</addFav>
+		</control>
+	</browser>
+	
 	<player>
 		<menu>
 			<close>Close</close>

@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="..\..\Release\UstrPLite3\bin\UstrPLite.swf" />
     <movie fps="30" />
-    <movie width="200" />
-    <movie height="50" />
+    <movie width="300" />
+    <movie height="450" />
     <movie version="10" />
     <movie background="#FFFFFF" />
   </output>

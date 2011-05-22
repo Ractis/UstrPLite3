@@ -2,7 +2,10 @@ package jp.ractius.ripple.display.resizableFrame
 {
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.ui.Mouse;
+	import flash.ui.MouseCursor;
 	import jp.ractius.ripple.events.ResizableFrameEvent;
+	import jp.ractius.ripple.ui.mouseCursor.MouseCursorManager;
 	
 	/**
 	 * ...
@@ -22,8 +25,13 @@ package jp.ractius.ripple.display.resizableFrame
 		private var m_frRT:ResizableArea;
 		private var m_frRB:ResizableArea;
 		
+		private var m_isActive:Boolean = false;
+		private var m_nextResizeCursor:String;
+		
 		public function ResizableFrame( edgeSize:Number = 7, cornerSize:Number = 20 ) 
 		{
+			alpha = 0;
+			
 			m_edgeSize		= edgeSize;
 			m_cornerSize	= cornerSize;
 			
@@ -42,15 +50,76 @@ package jp.ractius.ripple.display.resizableFrame
 			var area:ResizableArea = new ResizableArea( hori, vert, m_edgeSize, m_cornerSize );
 			addChild( area );
 			
-			area.addEventListener( MouseEvent.MOUSE_DOWN, _onMouseDown );
+			area.addEventListener( MouseEvent.MOUSE_DOWN,	_onMouseDown );
+			area.addEventListener( MouseEvent.ROLL_OVER,	_onRollOver );
+			area.addEventListener( MouseEvent.ROLL_OUT,		_onRollOut );
 			
 			return area;
 		}
 		
+		private function _onRollOut( e:MouseEvent ):void 
+		{
+			if ( !m_isActive )
+			{
+				Mouse.cursor = MouseCursor.AUTO;
+				
+				// mouseDown 中は auto に変化しない問題の対策
+				Mouse.hide();
+				Mouse.show();
+			}
+		}
+		
+		private function _onRollOver( e:MouseEvent ):void 
+		{
+			var area:ResizableArea = ResizableArea( e.target );
+			
+			switch ( area.hori + area.vert )
+			{
+			case "T":
+			case "B":
+				m_nextResizeCursor = MouseCursorManager.RESIZE_0;
+				break;
+				
+			case "RT":
+			case "LB":
+				m_nextResizeCursor = MouseCursorManager.RESIZE_45;
+				break;
+				
+			case "R":
+			case "L":
+				m_nextResizeCursor = MouseCursorManager.RESIZE_90;
+				break;
+				
+			case "RB":
+			case "LT":
+				m_nextResizeCursor = MouseCursorManager.RESIZE_135;
+				break;
+			}
+			
+			if ( !m_isActive )
+			{
+				Mouse.cursor = m_nextResizeCursor;
+			}
+		}
+		
+		private function _onMouseUp( e:MouseEvent ):void 
+		{
+			e.currentTarget.removeEventListener( e.type, arguments.callee );
+			
+			if ( m_nextResizeCursor )	Mouse.cursor = m_nextResizeCursor;
+			else						Mouse.cursor = MouseCursor.AUTO;
+			
+			m_isActive = false;
+		}
+		
 		private function _onMouseDown( e:MouseEvent ):void 
 		{	
+			m_isActive = true;
+			
 			var area:ResizableArea = ResizableArea( e.target );
 			dispatchEvent( new ResizableFrameEvent( area.hori, area.vert ) );
+			
+			stage.addEventListener( MouseEvent.MOUSE_UP, _onMouseUp );
 		}
 		
 		override public function set width( w:Number ):void
