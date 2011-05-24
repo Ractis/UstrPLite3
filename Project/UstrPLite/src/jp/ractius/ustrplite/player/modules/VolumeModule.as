@@ -35,7 +35,10 @@ package jp.ractius.ustrplite.player.modules
 		
 		private function _fireChangeVolume():void	{ _fireEvent( VolumeEvent.CHANGE_VOLUME ); }
 		
-		public function get volume():int { return m_volume; }
+		public function get volume():int
+		{
+			return isMute ? 0 : m_volume;
+		}
 		
 		public function set volume( value:int ):void 
 		{
@@ -48,6 +51,12 @@ package jp.ractius.ustrplite.player.modules
 		public function get isBoost():Boolean { return m_isBoost; }
 		
 		public function get isMute():Boolean { return m_isMute; }
+		
+		public function set isMute( value:Boolean ):void
+		{
+			m_isMute = value;
+			_fireChangeVolume();
+		}
 		
 	}
 

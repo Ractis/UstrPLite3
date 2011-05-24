@@ -47,6 +47,8 @@ package jp.ractius.ustrplite.data.channel
 			dispatchEvent( new ChannelEvent( eventType ) );
 		}
 		
+		public function get uri():String { return m_serviceName.toLowerCase() + "/" + m_channelName; }
+		
 		public function get isUpdating():Boolean { return m_currentUpdates > 0; }
 		
 		public function beginUpdate():void

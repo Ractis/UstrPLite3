@@ -1,7 +1,10 @@
 package jp.ractius.ustrplite.gui.browser.control 
 {
 	import jp.ractius.ripple.gui.buttons.RButton;
+	import jp.ractius.ripple.gui.GuiUtil;
 	import jp.ractius.ripple.gui.panels.HorizontalBorderPanel;
+	import jp.ractius.ripple.gui.RTextBox;
+	import jp.ractius.ripple.utils.Localization;
 	import jp.ractius.ustrplite.browser.Browser;
 	import org.aswing.Component;
 	import org.aswing.event.AWEvent;
@@ -21,7 +24,7 @@ package jp.ractius.ustrplite.gui.browser.control
 	{
 		static private const NAME_PREFIX:String = "browser.control.";
 		
-		private var m_UrlTf:JTextField;
+		private var m_urlTb:RTextBox;
 		
 		public function ControlPanel() 
 		{
@@ -36,23 +39,27 @@ package jp.ractius.ustrplite.gui.browser.control
 		override protected function createCenter():Component 
 		{
 			var panel:SoftBox = SoftBox.createVerticalBox( 0, SoftBoxLayout.CENTER );
-			panel.append( m_UrlTf = new JTextField() );
+			panel.append( m_urlTb = new RTextBox( Localization.substitude( "browser.control.textBox.default" ) ) );
+			
+			m_urlTb.mainTf.addActionListener( _onPlay );
 			
 			return panel;
+		}
+		
+		private function _onPlay( ...e ):void 
+		{
+			Browser.inst.play( _getTextAndClear() );
 		}
 		
 		override protected function createRight():Component 
 		{
 			var panel:JPanel = new JPanel( new FlowLayout( FlowLayout.CENTER ) );
 			
-			_appendBtn( panel, "play", function( e:AWEvent ):void
-			{
-				Browser.inst.play( _getAndClearText() );
-			} );
+			_appendBtn( panel, "play", _onPlay );
 			
 			_appendBtn( panel, "addFav", function( e:AWEvent ):void
 			{
-				Browser.inst.addFav( _getAndClearText() );
+				Browser.inst.addFav( _getTextAndClear() );
 			} );
 			
 			panel.append( new JSpacer( new IntDimension( 1 ) ) );
@@ -60,11 +67,9 @@ package jp.ractius.ustrplite.gui.browser.control
 			return panel;
 		}
 		
-		private function _getAndClearText():String
+		private function _getTextAndClear():String
 		{
-			var text:String = m_UrlTf.getText();
-			m_UrlTf.setText( "" );
-			return text;
+			return m_urlTb.getTextAndClear();
 		}
 		
 		private function _appendBtn( panel:JPanel, name:String, listener:Function ):void

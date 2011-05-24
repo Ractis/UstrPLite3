@@ -2,7 +2,8 @@
 <application xmlns="http://ns.adobe.com/air/application/2.6">
 	
 	<id>jp.ractius.ustrplite</id> 
-	<versionNumber>2.99.2</versionNumber> 
+	<versionNumber>2.99.3</versionNumber> 
+	<versionLabel>ver.3 Alpha-3</versionLabel>
 	<filename>UstrPLite</filename> 
 	
 	<name>UstrPLite 3 Alpha</name> 
@@ -18,7 +19,6 @@
 		<minimizable>true</minimizable> 
 		<maximizable>false</maximizable> 
 		<resizable>true</resizable> 
-		<minSize>350 500</minSize>
 	</initialWindow> 
 	
 	<!-- 

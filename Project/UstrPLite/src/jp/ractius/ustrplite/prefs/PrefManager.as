@@ -15,6 +15,7 @@ package jp.ractius.ustrplite.prefs
 	public class PrefManager 
 	{
 		static private const PREF_DIR:String = "app-storage:/prefs/";
+		//static private const PREF_DIR:String = "app-storage:/configs/";	// β 版以降
 		static private const PREF_EXT:String = ".xml";
 		
 		static private var m_favs:XML;
@@ -29,10 +30,16 @@ package jp.ractius.ustrplite.prefs
 			m_favs = new XML( <favorites></favorites> );
 			
 			// 読み込み
+			FavoriteStore.inst.addEventListener( FavoriteEvent.ADD_TO_FAVORITES, _registerRemFavListener );
 			_load( "favorites", _onLoadXml );
 			
 			// Listeners
 			FavoriteStore.inst.addEventListener( FavoriteEvent.ADD_TO_FAVORITES, _onAddFav );
+		}
+		
+		static private function _registerRemFavListener( e:FavoriteEvent ):void
+		{
+			e.favorite.addEventListener( FavoriteEvent.REMOVE_FROM_FAVORITES, _onRemFav );
 		}
 		
 		static private function _onAddFav( e:FavoriteEvent ):void 
@@ -42,7 +49,6 @@ package jp.ractius.ustrplite.prefs
 			
 			Algorithm.forN( m_favs.service.length(), function( i:int ):void
 			{
-				trace( m_favs.service[i].name );
 				if ( m_favs.service[i].name == chData.serviceName )
 				{
 					sv = m_favs.service[i];
@@ -60,10 +66,21 @@ package jp.ractius.ustrplite.prefs
 			_save( "favorites", m_favs );
 		}
 		
+		static private function _onRemFav( e:FavoriteEvent ):void 
+		{
+			var chData:ChannelData = e.favorite.channel;
+			
+			var sv:XML = m_favs.service.( name == chData.serviceName )[0];
+			
+			delete sv.channel.( name == chData.channelName )[0];
+			if ( sv.channel.length() == 0 ) delete sv.(true)[0];
+			
+			_save( "favorites", m_favs );
+		}
+		
 		static private function _onLoadXml( xml:XML ):void 
 		{
 			m_favs = xml;
-			trace( m_favs.service.length() );
 			
 			Algorithm.forN( m_favs.service.length(), function( i:int ):void
 			{

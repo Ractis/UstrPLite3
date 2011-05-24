@@ -18,7 +18,7 @@ package jp.ractius.ustrplite.services.stickam.channel
 		
 		override public function updateInfo( channel:ChannelUpdater ):void 
 		{
-			new ChannelInfoLoader( channel );
+			push( new ChannelInfoLoader( channel ) );
 		}
 		
 	}

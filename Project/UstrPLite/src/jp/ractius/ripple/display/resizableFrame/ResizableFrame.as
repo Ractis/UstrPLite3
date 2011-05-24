@@ -67,6 +67,10 @@ package jp.ractius.ripple.display.resizableFrame
 				Mouse.hide();
 				Mouse.show();
 			}
+			else
+			{
+				m_nextResizeCursor = null;
+			}
 		}
 		
 		private function _onRollOver( e:MouseEvent ):void 

@@ -1,20 +1,15 @@
 package jp.ractius.ustrplite
 {
+	import air.update.ApplicationUpdaterUI;
+	import air.update.events.UpdateEvent;
 	import flash.display.Sprite;
 	import jp.ractius.ripple.gui.plaf.RLookAndFeel;
 	import jp.ractius.ripple.ui.mouseCursor.MouseCursorManager;
 	import jp.ractius.ripple.utils.Localization;
 	import jp.ractius.ustrplite.browser.Browser;
-	import jp.ractius.ustrplite.data.channel.ChannelData;
-	import jp.ractius.ustrplite.data.channel.ChannelStore;
-	import jp.ractius.ustrplite.player.PlayerWindow;
 	import jp.ractius.ustrplite.prefs.PrefManager;
-	import jp.ractius.ustrplite.services.IChannelUri;
-	import jp.ractius.ustrplite.services.IService;
 	import jp.ractius.ustrplite.services.Services;
 	import org.aswing.AsWingManager;
-	import org.aswing.event.AWEvent;
-	import org.aswing.JTextField;
 	import org.aswing.UIManager;
 	
 	/**
@@ -23,6 +18,7 @@ package jp.ractius.ustrplite
 	 */
 	public class Main extends Sprite 
 	{
+		private var m_updater:ApplicationUpdaterUI;
 		
 		public function Main():void 
 		{
@@ -36,6 +32,17 @@ package jp.ractius.ustrplite
 			UIManager.setLookAndFeel( new RLookAndFeel() );
 			
 			addChild( Browser.inst );
+			Browser.inst.changeSkin( UstrpliteConstants.BROWSER_SKIN_STD );
+			
+			m_updater = new ApplicationUpdaterUI();
+			m_updater.updateURL = "http://ractis.rdy.jp/update/ustp/update-descriptor-v3-alpha.xml";
+			m_updater.isCheckForUpdateVisible = false;
+			m_updater.addEventListener( UpdateEvent.INITIALIZED, function( e:UpdateEvent ):void
+			{
+				e.currentTarget.removeEventListener( e.type, arguments.callee );
+				m_updater.checkNow();
+			} );
+			m_updater.initialize();
 		}
 		
 	}

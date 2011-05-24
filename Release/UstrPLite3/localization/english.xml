@@ -5,10 +5,24 @@
 	<general>
 		<play>Play</play>
 		<addFav>AddFav</addFav>
+		<remFav>RemFav</remFav>
+		<showMenu>Show menu</showMenu>
+		<alwaysInFront>Always in front</alwaysInFront>
+		<minimize>Minimize</minimize>
+		<exit>Exit</exit>
 	</general>
 	
 	<browser>
+		<miniMenu>
+			<switchSkin>Switch to browser mode</switchSkin>
+		</miniMenu>
+		<channel>
+			<remFav>Remove from favorites</remFav>
+		</channel>
 		<control>
+			<textBox>
+				<default>Type channel URL here</default>
+			</textBox>
 			<play>
 				<label>#general.play</label>
 				<toolTip>Play channel</toolTip>

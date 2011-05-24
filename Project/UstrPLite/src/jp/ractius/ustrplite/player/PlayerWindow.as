@@ -10,9 +10,12 @@ package jp.ractius.ustrplite.player
 	 */
 	public class PlayerWindow extends NativeWindow 
 	{
+		private var m_uri:String;
 		
 		public function PlayerWindow( channel:ChannelData ) 
 		{
+			m_uri = channel.uri;
+			
 			var opt:NativeWindowInitOptions = new NativeWindowInitOptions();
 			opt.systemChrome	= "none";
 			opt.transparent		= true;
@@ -30,6 +33,8 @@ package jp.ractius.ustrplite.player
 			
 			activate();
 		}
+		
+		public function get uri():String { return m_uri; }
 		
 	}
 

@@ -1,9 +1,11 @@
 package jp.ractius.ustrplite.gui.browser.titleBar 
 {
+	import flash.events.Event;
 	import jp.ractius.ripple.air.WindowMoveController;
 	import jp.ractius.ripple.display.DirectionalShadowShape;
 	import jp.ractius.ripple.gui.panels.HorizontalBorderPanel;
 	import jp.ractius.ustrplite.browser.Browser;
+	import jp.ractius.ustrplite.browser.skins.StandardSkin;
 	import org.aswing.AssetBackground;
 	import org.aswing.Component;
 	import org.aswing.geom.IntDimension;
@@ -32,7 +34,12 @@ package jp.ractius.ustrplite.gui.browser.titleBar
 			addChild( m_shadow );
 			
 			//TODO windowMove
-			new WindowMoveController( this, Browser.inst.windowBounds );
+			var _this:TitleBar = this;
+			addEventListener( Event.ADDED_TO_STAGE, function( e:Event ):void
+			{
+				e.currentTarget.removeEventListener( e.type, arguments.callee );
+				new WindowMoveController( _this, Browser.inst.getSkin( StandardSkin.NAME ).windowBounds );
+			} );
 		}
 		
 		override public function setSize( newSize:IntDimension ):void 

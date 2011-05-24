@@ -29,11 +29,29 @@ package jp.ractius.ripple.air
 		
 		public function appendItem( name:String, listener:Function = null, key:String = "", isCtrl:Boolean = false, isShift:Boolean = false ):NativeMenuItem
 		{
-			var label:String;
-			if ( m_isUseLocalization )	label = Localization.substitude( name );
-			else						label = name;
+			var item:NativeMenuItem = new NativeMenuItem();
+			_appendImpl( item, name, listener, key, isCtrl, isShift );
+			return item;
+		}
+		
+		public function appendToggleItem( name:String, tgt:Object, tgtProperty:String, key:String = "", isCrtl:Boolean = false, isShift:Boolean = false ):RNativeMenuToggleItem
+		{
+			var item:RNativeMenuToggleItem = new RNativeMenuToggleItem( tgt, tgtProperty );
+			_appendImpl( item, name, _onSelectToggle, key, isCrtl, isShift );
+			return item;
+		}
+		
+		private function _onSelectToggle( e:Event ):void 
+		{
+			var item:RNativeMenuToggleItem = RNativeMenuToggleItem( e.target );
+			item.toggle();
+		}
+		
+		private function _appendImpl( item:NativeMenuItem, name:String, listener:Function, key:String, isCtrl:Boolean, isShift:Boolean ):void
+		{
+			if ( m_isUseLocalization )	item.label = Localization.substitude( name );
+			else						item.label = name;
 			
-			var item:NativeMenuItem = new NativeMenuItem( label );
 			item.keyEquivalent = key;
 			item.keyEquivalentModifiers = _createKeyMods( isCtrl, isShift );
 			if ( listener != null ) item.addEventListener( Event.SELECT, listener );
@@ -41,7 +59,6 @@ package jp.ractius.ripple.air
 			_registerToKeyMap( item, key, isCtrl, isShift );
 			
 			m_currentMenu.addItem( item );
-			return item;
 		}
 		
 		private function _registerToKeyMap( item:NativeMenuItem, key:String, isCtrl:Boolean, isShift:Boolean ):void 

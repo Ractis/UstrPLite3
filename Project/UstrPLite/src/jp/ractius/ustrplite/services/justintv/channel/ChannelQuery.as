@@ -3,6 +3,7 @@ package jp.ractius.ustrplite.services.justintv.channel
 	import jp.ractius.ustrplite.data.channel.ChannelUpdater;
 	import jp.ractius.ustrplite.services.common.channel.BaseChannelQuery;
 	import jp.ractius.ustrplite.services.justintv.channel.loader.ChannelInfoLoader;
+	import jp.ractius.ustrplite.services.justintv.channel.loader.ChannelStatusLoader;
 	
 	/**
 	 * ...
@@ -18,7 +19,8 @@ package jp.ractius.ustrplite.services.justintv.channel
 		
 		override public function updateInfo( channel:ChannelUpdater ):void 
 		{
-			new ChannelInfoLoader( channel );
+			push( new ChannelInfoLoader( channel ) );
+			push( new ChannelStatusLoader( channel ) );
 		}
 		
 	}

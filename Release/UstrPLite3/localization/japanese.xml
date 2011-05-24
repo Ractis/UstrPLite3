@@ -5,10 +5,24 @@
 	<general>
 		<play>再生</play>
 		<addFav>登録</addFav>
+		<remFav>削除</remFav>
+		<showMenu>メニューを表示</showMenu>
+		<alwaysInFront>常に最前面表示</alwaysInFront>
+		<minimize>最小化</minimize>
+		<exit>終了</exit>
 	</general>
 	
 	<browser>
+		<miniMenu>
+			<switchSkin>ブラウザモードに切り替え</switchSkin>
+		</miniMenu>
+		<channel>
+			<remFav>お気に入りから削除</remFav>
+		</channel>
 		<control>
+			<textBox>
+				<default>ここにチャンネル URL を入力</default>
+			</textBox>
 			<play>
 				<label>#general.play</label>
 				<toolTip>チャンネルを再生</toolTip>

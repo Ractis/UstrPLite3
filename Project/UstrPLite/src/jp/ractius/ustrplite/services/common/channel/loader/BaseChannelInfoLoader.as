@@ -1,5 +1,6 @@
 package jp.ractius.ustrplite.services.common.channel.loader 
 {
+	import flash.events.Event;
 	import jp.ractius.ustrplite.data.channel.ChannelUpdater;
 	import jp.ractius.ustrplite.data.channel.IChannelInfo;
 	
@@ -12,9 +13,7 @@ package jp.ractius.ustrplite.services.common.channel.loader
 		
 		public function BaseChannelInfoLoader( channel:ChannelUpdater, api:IApiUrlProvider ) 
 		{
-			super( channel );
-			
-			load( api.channelInfoUrl( channelName ), _onLoad )
+			super( channel, api.channelInfoUrl( channel.channelName ) );
 		}
 		
 		protected function createChannelInfo( data:String ):IChannelInfo
@@ -23,7 +22,7 @@ package jp.ractius.ustrplite.services.common.channel.loader
 			return null;
 		}
 		
-		private function _onLoad( ...e ):void 
+		override protected function onLoad( e:Event ):void 
 		{
 			channel.updateInfo( createChannelInfo( data ) );
 		}

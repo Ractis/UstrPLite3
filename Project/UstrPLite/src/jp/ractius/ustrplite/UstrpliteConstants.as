@@ -19,6 +19,9 @@ package jp.ractius.ustrplite
 		static public const STATUS_OFFLINE:String		= "offline";
 		static public const STATUS_LIVE:String			= "live";
 		
+		static public const BROWSER_SKIN_STD:String		= "browserSkinStd";
+		static public const BROWSER_SKIN_MINI:String	= "browserSkinMini";
+		
 		/**
 		 * @private
 		 */

@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="..\..\Release\UstrPLite3\bin\UstrPLite.swf" />
     <movie fps="30" />
-    <movie width="300" />
-    <movie height="450" />
+    <movie width="425" />
+    <movie height="600" />
     <movie version="10" />
     <movie background="#FFFFFF" />
   </output>
@@ -53,6 +53,7 @@
     <element path="lib\Crypto.swc" />
     <element path="lib\oauth-as3.swc" />
     <element path="lib\sweezy-anim.swc" />
+    <element path="lib\ApplicationUpdater_UI.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

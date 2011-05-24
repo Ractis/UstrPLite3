@@ -2,11 +2,12 @@ package jp.ractius.ustrplite.gui.browser.column.content.channel
 {
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import jp.ractius.ustrplite.browser.channel.FavoriteChannelMenu;
 	import jp.ractius.ustrplite.data.favorite.FavoriteData;
 	import jp.ractius.ustrplite.data.favorite.FavoriteStore;
+	import jp.ractius.ustrplite.data.playing.PlayingStore;
 	import jp.ractius.ustrplite.events.FavoriteEvent;
-	import jp.ractius.ustrplite.gui.browser.column.content.channel.thumbnail.ThumbnailPanel;
-	import jp.ractius.ustrplite.player.PlayerWindow;
+	
 	/**
 	 * ...
 	 * @author ractis
@@ -30,15 +31,19 @@ package jp.ractius.ustrplite.gui.browser.column.content.channel
 		
 		private function _appendFav( fav:FavoriteData ):void
 		{
-			var panel:ThumbnailPanel = new ThumbnailPanel( fav.channel );
+			var panel:ChannelBlockPanel = new ChannelBlockPanel( fav.channel );
 			panel.setPreferredWidth( blockW );
 			
 			panel.addEventListener( MouseEvent.CLICK, function( e:Event ):void
 			{
-				new PlayerWindow( e.target.channel );
+				PlayingStore.inst.play( e.target.channel );
 			} );
 			
+			panel.contextMenu = new FavoriteChannelMenu( fav );
+			
 			gridPanel.append( panel );
+			
+			fav.addEventListener( FavoriteEvent.REMOVE_FROM_FAVORITES, panel.removeFromParent );
 		}
 		
 		private function _onAddFav( e:FavoriteEvent ):void 

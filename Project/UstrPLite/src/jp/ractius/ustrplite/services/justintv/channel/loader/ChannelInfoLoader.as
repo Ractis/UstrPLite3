@@ -15,9 +15,6 @@ package jp.ractius.ustrplite.services.justintv.channel.loader
 		public function ChannelInfoLoader( channel:ChannelUpdater ) 
 		{
 			super( channel, new ApiUrlProvider() );
-			
-			// チャンネルステータスは別に取得
-			new ChannelStatusLoader( channel.clone() );
 		}
 		
 		override protected function createChannelInfo( data:String ):IChannelInfo 

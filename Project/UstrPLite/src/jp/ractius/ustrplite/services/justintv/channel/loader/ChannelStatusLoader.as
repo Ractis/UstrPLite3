@@ -1,5 +1,6 @@
 package jp.ractius.ustrplite.services.justintv.channel.loader 
 {
+	import flash.events.Event;
 	import jp.ractius.ustrplite.data.channel.ChannelUpdater;
 	import jp.ractius.ustrplite.services.common.channel.loader.BaseChannelLoader;
 	import jp.ractius.ustrplite.services.justintv.channel.parser.ChannelStatusParser;
@@ -14,12 +15,10 @@ package jp.ractius.ustrplite.services.justintv.channel.loader
 		
 		public function ChannelStatusLoader( channel:ChannelUpdater ) 
 		{
-			super( channel );
-			
-			load( new ApiUrlProvider().channelStatusUrl( channelName ), _onLoad );
+			super( channel, new ApiUrlProvider().channelStatusUrl( channel.channelName ) );
 		}
 		
-		private function _onLoad( ...e ):void 
+		override protected function onLoad( e:Event ):void 
 		{
 			var parser:ChannelStatusParser = new ChannelStatusParser( channelName, data );
 			channel.updateStatus( parser );

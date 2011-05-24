@@ -60,6 +60,8 @@ package jp.ractius.ripple.air
 		
 		private function _onMouseDown( e:MouseEvent ):void 
 		{
+			updateLastMousePos( e );
+			
 			m_isActive = true;
 			
 			m_stage.addEventListener( MouseEvent.MOUSE_UP, _onMouseUp );
