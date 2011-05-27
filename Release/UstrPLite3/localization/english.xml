@@ -36,7 +36,20 @@
 	
 	<player>
 		<menu>
+			<window>
+				<label>Window</label>
+				<minimizeMute>Minimize and Mute</minimizeMute>
+				<fullscreen>Fullscreen</fullscreen>
+			</window>
+			<refresh>Refresh</refresh>
+			<playInPopup>Play in official player</playInPopup>
 			<close>Close</close>
 		</menu>
 	</player>
+	
+	<services>
+		<justintv>
+			<lang />
+		</justintv>
+	</services>
 </data>

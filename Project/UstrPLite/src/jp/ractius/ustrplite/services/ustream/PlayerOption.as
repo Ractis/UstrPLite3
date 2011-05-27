@@ -15,6 +15,11 @@ package jp.ractius.ustrplite.services.ustream
 			super( player );
 		}
 		
+		override public function get popupPlayerUrl():String
+		{
+			return "http://ustream.tv/channel-popup/" + channel.channelName;
+		}
+		
 	}
 
 }

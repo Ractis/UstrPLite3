@@ -35,6 +35,8 @@ package jp.ractius.ustrplite.crostr.justintv
 			addChild( m_content );
 			
 			m_api = Object( m_content ).api;
+			m_api.hide_ads();
+			m_api.full_remove_and_prevent_ads();
 			
 			stage.addEventListener( Event.RESIZE, _onResize );
 			_onResize();
@@ -68,9 +70,15 @@ package jp.ractius.ustrplite.crostr.justintv
 			m_api.resize_player( w, h );
 		}
 		
-		override protected function onPlayChannel():void 
+		override protected function onPlay():void 
 		{
 			m_api.play_live( channelId );
+		}
+		
+		override protected function onRefresh():void 
+		{
+			m_api.pause_video();
+			m_api.resume_video();
 		}
 		
 	}

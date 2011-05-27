@@ -25,9 +25,13 @@ package jp.ractius.ustrplite.crostr.stickam
 			sendInit();
 		}
 		
-		override protected function onPlayChannel():void 
+		override protected function onPlay():void 
 		{
-			if ( viewer ) return;
+			if ( m_player )
+			{
+				m_player.mediaStop();
+				m_player = null;
+			}
 			
 			var Player:Class = getClassDefinition( PLAYER_CLASS_NAME );
 			
@@ -35,6 +39,12 @@ package jp.ractius.ustrplite.crostr.stickam
 			viewer = m_player;
 			
 			m_player.addEventListener( "media.play", _onMediaPlayStc );
+			m_player.mediaPlay();
+		}
+		
+		override protected function onRefresh():void 
+		{
+			m_player.mediaStop();
 			m_player.mediaPlay();
 		}
 		

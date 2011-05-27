@@ -1,6 +1,7 @@
 package jp.ractius.ripple.gui 
 {
 	import flash.events.FocusEvent;
+	import flash.filters.BlurFilter;
 	import jp.ractius.ripple.anim.RAnimator;
 	import org.aswing.ASColor;
 	import org.aswing.EmptyLayout;
@@ -19,6 +20,8 @@ package jp.ractius.ripple.gui
 		private var m_mainTf:JTextField;
 		private var m_backTf:JTextField;
 		
+		private var m_backTfBlurFx:BlurFilter;
+		
 		public function RTextBox( defaultText:String = "" ) 
 		{
 			super( new EmptyLayout() );
@@ -34,8 +37,19 @@ package jp.ractius.ripple.gui
 			m_backTf.setForeground( new ASColor( 0, 0.35 ) );
 			m_backTf.mouseEnabled = false;
 			
+			m_backTfBlurFx = new BlurFilter( 0, 0, 1 );
+			m_backTf.filters = [ m_backTfBlurFx ];
+			
 			m_mainTf.addEventListener( FocusEvent.FOCUS_IN, _onFocusIn );
 			m_mainTf.addEventListener( FocusEvent.FOCUS_OUT, _onFocusOut );
+		}
+		
+		public function get backTfBlur():Number { return m_backTfBlurFx.blurX; }
+		
+		public function set backTfBlur( blur:Number ):void
+		{
+			m_backTfBlurFx.blurX = blur;
+			m_backTfBlurFx.blurY = blur;
 		}
 		
 		private function _onFocusOut( e:FocusEvent ):void 
@@ -43,12 +57,14 @@ package jp.ractius.ripple.gui
 			if ( m_mainTf.getText().length == 0 )
 			{
 				RAnimator.startFadeIn( m_backTf, 200 );
+				backTfBlur = 0;
 			}
 		}
 		
 		private function _onFocusIn( e:FocusEvent ):void 
 		{
-			RAnimator.startFadeOut( m_backTf );
+			RAnimator.startFadeOut( m_backTf, 150 );
+			RAnimator.startFadeOut( this, 150, 10, "backTfBlur" );
 		}
 		
 		public function getTextAndClear():String

@@ -1,7 +1,12 @@
 package jp.ractius.ustrplite.gui.browser.column.content.channel 
 {
+	import flash.display.NativeMenu;
+	import flash.events.Event;
+	import flash.events.MouseEvent;
+	import jp.ractius.ustrplite.data.channel.ChannelData;
+	import jp.ractius.ustrplite.data.playing.PlayingStore;
+	import org.aswing.event.ContainerEvent;
 	import org.aswing.FlowLayout;
-	import org.aswing.geom.IntDimension;
 	import org.aswing.GridLayout;
 	import org.aswing.JPanel;
 	
@@ -12,32 +17,62 @@ package jp.ractius.ustrplite.gui.browser.column.content.channel
 	public class ChannelsPanel extends JPanel 
 	{
 		private var m_blockW:Number	= 135;
-		private var m_margin:Number	= 5;
+		private var m_margin:Number	= 10;
 		
 		private var m_gridPanel:JPanel;
 		private var m_gridLayout:GridLayout;
 		
 		public function ChannelsPanel() 
 		{
-			super( new FlowLayout( FlowLayout.CENTER, 0, 5, true ) );
+			super( new FlowLayout( FlowLayout.CENTER, 0, 0, false ) );
 			setName( "ChannelsPanel" );
 			
 			m_gridLayout = new GridLayout( 0, 1, m_margin, m_margin )
 			m_gridPanel = new JPanel( m_gridLayout );
 			append( m_gridPanel );
+			
+		//	GuiUtil.drawDebugBorder( m_gridPanel )
+			
+			m_gridPanel.addEventListener( ContainerEvent.COM_REMOVED, _updatePrefferedSize );
 		}
 		
-		override public function setSize( newSize:IntDimension ):void 
+		private function _updatePrefferedSize( ...e ):void
 		{
-			m_gridLayout.setColumns( Math.floor( ( newSize.width - m_margin ) / ( m_blockW + m_margin ) ) );
-			m_gridPanel.doLayout();
+			setPreferredSize( m_gridPanel.getPreferredSize() );
+		}
+		
+		override public function setPreferredWidth( preferredWidth:int ):void 
+		{
+			var cols:int = Math.floor( ( preferredWidth - m_margin * 2 ) / ( m_blockW + m_margin ) );
+			if ( cols != m_gridLayout.getColumns() )
+			{
+				m_gridLayout.setColumns( cols );
+				m_gridPanel.revalidate();
+			}
 			
-			super.setSize( newSize );
+			_updatePrefferedSize();
+		}
+		
+		protected function appendBlock( channel:ChannelData, menu:NativeMenu ):ChannelBlockPanel
+		{
+			var panel:ChannelBlockPanel = new ChannelBlockPanel( channel );
+			panel.setPreferredWidth( blockW );
+			
+			panel.addEventListener( MouseEvent.CLICK, function( e:Event ):void
+			{
+				PlayingStore.inst.play( e.target.channel );
+			} );
+			
+			panel.contextMenu = menu;
+			
+			gridPanel.append( panel );
+			
+			return panel;
 		}
 		
 		public function get blockW():Number { return m_blockW; }
 		
-		public function set blockW(value:Number):void 
+		public function set blockW( value:Number ):void 
 		{
 			m_blockW = value;
 		}

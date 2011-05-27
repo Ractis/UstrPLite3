@@ -1,5 +1,6 @@
 package jp.ractius.ustrplite.services 
 {
+	import flash.html.HTMLLoader;
 	
 	/**
 	 * ...
@@ -13,7 +14,13 @@ package jp.ractius.ustrplite.services
 		 */
 		function get isRemote():Boolean;
 		
+		/**
+		 * ポップアウトプレイヤーのアドレスを取得
+		 */
+		function get popupPlayerUrl():String;
+		
 		function onInitialized():void;
+		function onBeginLoadPopupPlayer( loader:HTMLLoader ):void;
 		
 	}
 	

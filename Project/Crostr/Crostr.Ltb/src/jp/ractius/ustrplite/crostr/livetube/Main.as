@@ -29,13 +29,19 @@ package jp.ractius.ustrplite.crostr.livetube
 			sendInit();
 		}
 		
-		override protected function onPlayChannel():void 
+		override protected function onPlay():void 
 		{
-			super.onPlayChannel();
-			
 			var loader:ChannelPageLoader = new ChannelPageLoader();
 			loader.addEventListener( Event.COMPLETE, _onLoadChannelPage );
 			loader.load( unescapeMultiByte( channelId ) );
+		}
+		
+		override protected function onRefresh():void 
+		{
+			var player:LivetubePlayer = viewer as LivetubePlayer;
+			if ( !player ) return;
+			
+			player.refresh();
 		}
 		
 		private function _onLoadChannelPage( e:Event ):void 

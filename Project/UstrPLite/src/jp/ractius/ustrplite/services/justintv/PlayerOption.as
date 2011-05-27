@@ -1,6 +1,8 @@
 package jp.ractius.ustrplite.services.justintv 
 {
 	import flash.geom.Point;
+	import flash.html.HTMLLoader;
+	import jp.ractius.ripple.utils.Localization;
 	import jp.ractius.ustrplite.events.ChannelExDataEvent;
 	import jp.ractius.ustrplite.player.Player;
 	import jp.ractius.ustrplite.services.common.BasePlayerOption;
@@ -18,6 +20,16 @@ package jp.ractius.ustrplite.services.justintv
 		}
 		
 		override public function get isRemote():Boolean	{ return true; }
+		
+		override public function get popupPlayerUrl():String
+		{
+			return _topUrl + channel.channelName + "/popout";
+		}
+		
+		override public function onBeginLoadPopupPlayer( loader:HTMLLoader ):void 
+		{
+			loader.window.shouldRedirect = false;
+		}
 		
 		override public function onInitialized():void 
 		{
@@ -40,6 +52,16 @@ package jp.ractius.ustrplite.services.justintv
 			if ( !videoSize ) return;
 			
 			player.updateAspectRatio( videoSize.x, videoSize.y );
+		}
+		
+		private function get _topUrl():String
+		{
+			var url:String = "justin.tv/";
+			
+			var lang:String = Localization.substitude( "services.justintv.lang" );
+			if ( lang ) url = lang + "." + url;
+			
+			return "http://" + url;
 		}
 		
 	}

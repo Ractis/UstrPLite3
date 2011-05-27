@@ -19,6 +19,8 @@ package jp.ractius.ripple.air
 		private var m_lastMouseX:int;
 		private var m_lastMouseY:int;
 		
+		private var m_isEnable:Boolean = true;
+		
 		public function BaseWindowController( tgt:InteractiveObject, bounds:WindowBounds ) 
 		{
 			m_tgt		= tgt;
@@ -62,6 +64,8 @@ package jp.ractius.ripple.air
 		{
 			updateLastMousePos( e );
 			
+			if ( !isEnable ) return;
+			
 			m_isActive = true;
 			
 			m_stage.addEventListener( MouseEvent.MOUSE_UP, _onMouseUp );
@@ -83,6 +87,13 @@ package jp.ractius.ripple.air
 		protected function get lastMouseY():int { return m_lastMouseY; }
 		
 		protected function get isActive():Boolean { return m_isActive; }
+		
+		public function get isEnable():Boolean { return m_isEnable; }
+		
+		public function set isEnable( value:Boolean ):void 
+		{
+			m_isEnable = value;
+		}
 		
 	}
 

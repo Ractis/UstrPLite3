@@ -36,7 +36,20 @@
 	
 	<player>
 		<menu>
+			<window>
+				<label>ウィンドウ</label>
+				<minimizeMute>最小化してミュート</minimizeMute>
+				<fullscreen>フルスクリーン</fullscreen>
+			</window>
+			<refresh>再接続</refresh>
+			<playInPopup>公式プレイヤーで再生</playInPopup>
 			<close>プレイヤーを閉じる</close>
 		</menu>
 	</player>
+	
+	<services>
+		<justintv>
+			<lang>ja</lang>
+		</justintv>
+	</services>
 </data>

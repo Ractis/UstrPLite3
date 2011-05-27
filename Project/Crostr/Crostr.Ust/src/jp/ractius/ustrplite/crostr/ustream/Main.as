@@ -30,26 +30,23 @@ package jp.ractius.ustrplite.crostr.ustream
 			sendInit();
 		}
 		
-		override protected function onPlayChannel():void 
-		{
-			_play();
-		}
-		
-		override protected function onSetPassword():void 
-		{
-			_play();
-		}
-		
-		private function _play():void 
+		override protected function onPlay():void 
 		{
 			if ( m_channel )
 			{
-				m_logic.destroy();
+				m_channel.destroy();
 				m_channel = null;
+				
+				m_logic.destroy();
 			}
 			
 			m_channel = m_logic.createChannel( channelId, /*autoPlay ="*/true, password );
 			m_channel.addEventListener( "getStreamSize", _onGetStreamSize );
+		}
+		
+		override protected function onRefresh():void 
+		{
+			onPlay();
 		}
 		
 		private function _onGetStreamSize( e:Event ):void 

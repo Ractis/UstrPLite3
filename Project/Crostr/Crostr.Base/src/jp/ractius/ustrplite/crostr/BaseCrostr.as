@@ -84,12 +84,12 @@ package jp.ractius.ustrplite.crostr
 		//------------------------------------------------------------------------------
 		// OVERRIDE ME
 		//------------------------------------------------------------------------------
-		protected function onPlayChannel():void
+		protected function onPlay():void
 		{
 			
 		}
 		
-		protected function onSetPassword():void
+		protected function onRefresh():void
 		{
 			
 		}
@@ -140,13 +140,18 @@ package jp.ractius.ustrplite.crostr
 		public final function playChannel( data:String ):void
 		{
 			m_channelId = data;
-			onPlayChannel();
+			onPlay();
 		}
 		
 		public final function setPassword( data:String ):void
 		{
 			m_password = data;
-			onSetPassword();
+			onPlay();
+		}
+		
+		public final function refresh( ...e ):void
+		{
+			onRefresh();
 		}
 		
 	}

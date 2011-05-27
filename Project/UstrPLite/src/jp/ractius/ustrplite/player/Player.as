@@ -1,9 +1,12 @@
 package jp.ractius.ustrplite.player 
 {
 	import flash.display.Graphics;
+	import flash.display.NativeWindow;
 	import flash.display.Shape;
 	import flash.display.Sprite;
+	import flash.display.StageDisplayState;
 	import flash.events.Event;
+	import flash.events.FullScreenEvent;
 	import jp.ractius.ripple.air.WindowBounds;
 	import jp.ractius.ripple.air.WindowMoveController;
 	import jp.ractius.ripple.air.WindowResizeController;
@@ -78,8 +81,35 @@ package jp.ractius.ustrplite.player
 			
 			m_sizeMod.addEventListener( ResizeEvent.RESIZE, _onResize );
 			m_volumeMod.addEventListener( VolumeEvent.CHANGE_VOLUME, _setVolume );
+			stage.addEventListener( FullScreenEvent.FULL_SCREEN, _onFullScreen );
 			
 			_onResize();
+		}
+		
+		private function _onFullScreen( e:FullScreenEvent ):void 
+		{
+			m_windowMoveCtrl.isEnable	= !e.fullScreen;
+			m_resizableFrame.visible	= !e.fullScreen;
+			
+			if ( e.fullScreen )
+			{
+				var sw:Number = stage.stageWidth;
+				var sh:Number = stage.stageHeight;
+				
+				var setSize:Function = function( tgt:Object ):void
+				{
+					tgt.width	= sw;
+					tgt.height	= sh;
+				};
+				
+				setSize( m_background );
+				setSize( m_overlay );
+				setSize( m_crostrDisp );
+			}
+			else
+			{
+				_onResize();
+			}
 		}
 		
 		private function _initWindowControllers():void 
@@ -106,6 +136,8 @@ package jp.ractius.ustrplite.player
 			addChild( m_overlay = new Sprite() );
 			_drawRect( m_overlay.graphics );
 			m_overlay.alpha = 0.01;
+			
+			m_overlay.doubleClickEnabled = true;
 		}
 		
 		private function _drawRect( g:Graphics ):void
@@ -136,7 +168,7 @@ package jp.ractius.ustrplite.player
 			m_sizeMod	= new SizeModule( m_windowBounds );
 			m_volumeMod	= new VolumeModule();
 			m_inputMod	= new InputModule( this );
-			m_menuMod	= new MenuModule( this );
+			m_menuMod	= new MenuModule( this, m_option );
 		}
 		
 		private function _playChannel( ...e ):void
@@ -152,13 +184,41 @@ package jp.ractius.ustrplite.player
 			m_socket.send( "setVolume", String( Number( m_volumeMod.volume ) / 100 ) );
 		}
 		
-		public function get sizeMod():SizeModule { return m_sizeMod; }
-		public function get volumeMod():VolumeModule { return m_volumeMod; }
-		public function get channel():ChannelData { return m_channel; }
+		public function get sizeMod():SizeModule		{ return m_sizeMod; }
+		public function get volumeMod():VolumeModule	{ return m_volumeMod; }
+		public function get channel():ChannelData		{ return m_channel; }
+		private function get window():NativeWindow		{ return stage.nativeWindow; }
 		
 		public function updateAspectRatio( w:Number, h:Number ):void
 		{
 			m_windowResizeCtrl.aspectRatio = w / h;
+		}
+		
+		public function refresh( ...e ):void 
+		{
+			m_socket.send( "refresh" );
+		}
+		
+		public function minimizeMute( ...e ):void
+		{
+			if ( !m_volumeMod.isMute )
+			{
+				window.addEventListener( Event.ACTIVATE, function( e:Event ):void
+				{
+					e.currentTarget.removeEventListener( e.type, arguments.callee );
+					
+					m_volumeMod.isMute = false;
+				} );
+			}
+			
+			m_volumeMod.isMute = true;
+			window.minimize();
+		}
+		
+		public function toggleFullscreen( ...e ):void
+		{
+			if ( stage.displayState == StageDisplayState.NORMAL )	stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+			else													stage.displayState = StageDisplayState.NORMAL;
 		}
 		
 		//------------------------------------------------------------------------------

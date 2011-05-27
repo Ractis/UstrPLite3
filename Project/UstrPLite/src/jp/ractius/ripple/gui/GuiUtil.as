@@ -1,6 +1,8 @@
 package jp.ractius.ripple.gui 
 {
 	import flash.display.DisplayObject;
+	import org.aswing.ASColor;
+	import org.aswing.border.LineBorder;
 	import org.aswing.Component;
 	import org.aswing.geom.IntDimension;
 	import org.aswing.JTextField;
@@ -14,6 +16,11 @@ package jp.ractius.ripple.gui
 		public function GuiUtil() 
 		{
 			
+		}
+		
+		static public function drawDebugBorder( tgt:Component, color:uint = 0x00FF00 ):void
+		{
+			tgt.setBorder( new LineBorder( null, new ASColor( color ), 3 ) );
 		}
 		
 		static public function getTextAndClear( tf:JTextField ):String

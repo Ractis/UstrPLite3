@@ -61,6 +61,14 @@ package jp.ractius.ustrplite.crostr.livetube
 			m_netConnection.connect( m_connectionName );
 		}
 		
+		public function refresh():void
+		{
+			if ( !m_netStream ) return;
+			
+			m_netStream.close();
+			m_netStream.play( m_streamName );
+		}
+		
 		private function _onStatus( e:NetStatusEvent ):void 
 		{
 			switch ( e.info.code )

@@ -83,7 +83,7 @@ package jp.ractius.ripple.air
 		public function pushSubmenu( name:String ):NativeMenu
 		{
 			var item:NativeMenuItem = appendItem( name );
-			m_currentMenu = item.submenu;
+			m_currentMenu = item.submenu = new NativeMenu();
 			
 			return m_currentMenu;
 		}

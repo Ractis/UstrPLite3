@@ -1,7 +1,6 @@
 package jp.ractius.ustrplite.player.modules 
 {
 	import flash.display.NativeWindow;
-	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
 	import flash.ui.Keyboard;
@@ -37,23 +36,12 @@ package jp.ractius.ustrplite.player.modules
 		
 		private function _onDoubleClick( e:MouseEvent ):void 
 		{
-			//
+		//	m_player.toggleFullscreen();
 		}
 		
 		private function _onMiddleClick( e:MouseEvent ):void 
 		{
-			if ( !m_volume.isMute )
-			{
-				m_window.addEventListener( Event.ACTIVATE, function( e:Event ):void
-				{
-					e.currentTarget.removeEventListener( e.type, arguments.callee );
-					
-					m_volume.isMute = false;
-				} );
-			}
-			
-			m_volume.isMute = true;
-			m_window.minimize();
+			m_player.minimizeMute();
 		}
 		
 		private function _onMouseWheel( e:MouseEvent ):void 

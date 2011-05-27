@@ -52,7 +52,6 @@ package jp.ractius.ustrplite.browser.skins
 			m_panel			= createPanel();
 			m_panel.mask 	= m_panelMask;
 			addChild( m_panel );
-			GuiUtil.initLayout( m_panel );
 			
 			// init ResizeFrame
 			m_resizeFrame = new ResizableFrame();
@@ -69,7 +68,9 @@ package jp.ractius.ustrplite.browser.skins
 		
 		private function _onAddToStage( e:Event ):void 
 		{
-			m_panel.revalidateIfNecessary();
+			GuiUtil.initLayout( m_panel );
+			_onResizing();
+		//	m_panel.revalidateIfNecessary();
 		}
 		
 		public function get windowBounds():WindowBounds { return m_windowBounds; }

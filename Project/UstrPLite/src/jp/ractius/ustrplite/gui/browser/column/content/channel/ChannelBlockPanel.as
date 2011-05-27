@@ -23,7 +23,7 @@ package jp.ractius.ustrplite.gui.browser.column.content.channel
 		{
 			if ( e ) e.currentTarget.removeEventListener( e.type, arguments.callee );
 			
-			Container( parent ).remove( this );
+			removeFromContainer();
 		}
 		
 		override public function setPreferredWidth( preferredWidth:int ):void 
