@@ -51,6 +51,17 @@ package jp.ractius.ustrplite.data.channel
 			return channel;
 		}
 		
+		public function updateInfoAll():void
+		{
+			for ( var svName:String in m_services )
+			{
+				for each ( var ch:ChannelData in m_services[ svName ] )
+				{
+					_channelQuery( svName ).updateInfo( new ChannelUpdater( ch ) );
+				}
+			}
+		}
+		
 		private function _channelQuery( serviceName:String ):IChannelQuery
 		{
 			return Services.getService( serviceName ).channelQuery;

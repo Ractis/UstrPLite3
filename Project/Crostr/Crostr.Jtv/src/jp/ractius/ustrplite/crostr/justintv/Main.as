@@ -35,13 +35,41 @@ package jp.ractius.ustrplite.crostr.justintv
 			addChild( m_content );
 			
 			m_api = Object( m_content ).api;
-			m_api.hide_ads();
-			m_api.full_remove_and_prevent_ads();
 			
 			stage.addEventListener( Event.RESIZE, _onResize );
 			_onResize();
 			
+		//	m_api.addEventListener( "started", _onJtvEvent );
+		//	m_api.addEventListener( "buffer_full", _onJtvEvent );
+			m_api.addEventListener( "stream_viewer_count", _onStreamViewerCountJtv );
+			m_api.addEventListener( "connected", _onConnectedJtv );
+			
+		//	m_api.addEventListener( "video", _onJtvEvent );
+			
 			sendInit();
+		}
+		
+		private function _onStreamViewerCountJtv( e:Object ):void 
+		{
+			sendViewers( e.info.stream );
+		}
+		
+		private function _onConnectedJtv( e:Event ):void 
+		{
+			m_api.jtv_video_player.ns.client.onMetaData = _onMetaDataNS;
+		}
+		
+		private function _onJtvEvent( e:Object ):void
+		{
+			sendPrint( e.type, e.event, e.info );
+			for each ( var val:Object in e.info ) sendPrint( " - " + val );
+		}
+		
+		private function _onMetaDataNS( data:Object ):void
+		{
+			sendVideoSize( data.width, data.height );
+			
+			m_api.jtv_video.player.metadata_handler( data );
 		}
 		
 		private function _onResize( ...e ):void 

@@ -6,6 +6,7 @@ package jp.ractius.ustrplite.gui.browser.column.content.channel.thumbnail
 	import jp.ractius.ustrplite.data.channel.ChannelData;
 	import jp.ractius.ustrplite.data.image.ThumbnailStore;
 	import jp.ractius.ustrplite.events.ChannelEvent;
+	import org.aswing.FlowLayout;
 	import org.aswing.geom.IntDimension;
 	
 	/**
@@ -22,7 +23,7 @@ package jp.ractius.ustrplite.gui.browser.column.content.channel.thumbnail
 		
 		public function ThumbnailPanel( channel:ChannelData ) 
 		{
-			super();
+			super( new FlowLayout( FlowLayout.RIGHT, 0, 0, false ) );
 			setName( "ThumbnailPanel" );
 			
 			m_channel = channel;
@@ -47,7 +48,7 @@ package jp.ractius.ustrplite.gui.browser.column.content.channel.thumbnail
 		
 		private function _showImage( ...e ):void 
 		{
-			addChild( m_image = m_imageLoader.cloneBitmap() );
+			addChildAt( m_image = m_imageLoader.cloneBitmap(), 0 );
 			m_image.smoothing = true;
 			
 			setSize( getSize() );

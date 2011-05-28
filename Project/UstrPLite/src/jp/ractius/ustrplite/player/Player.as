@@ -17,12 +17,14 @@ package jp.ractius.ustrplite.player
 	import jp.ractius.ripple.utils.CsvUtil;
 	import jp.ractius.ustrplite.data.channel.ChannelData;
 	import jp.ractius.ustrplite.events.ChannelEvent;
+	import jp.ractius.ustrplite.events.PlayerEvent;
 	import jp.ractius.ustrplite.events.ResizeEvent;
 	import jp.ractius.ustrplite.events.VolumeEvent;
 	import jp.ractius.ustrplite.player.modules.InputModule;
 	import jp.ractius.ustrplite.player.modules.MenuModule;
 	import jp.ractius.ustrplite.player.modules.SizeModule;
 	import jp.ractius.ustrplite.player.modules.VolumeModule;
+	import jp.ractius.ustrplite.player.skins.vanilla.InfoTips;
 	import jp.ractius.ustrplite.services.IPlayerOption;
 	import jp.ractius.ustrplite.services.Services;
 	import jp.ractius.ustrplite.UstrpliteConstants;
@@ -54,6 +56,10 @@ package jp.ractius.ustrplite.player
 		private var m_crostrDisp:CrostrDisp;
 		private var m_overlay:Sprite;
 		
+		private var m_infoTips:InfoTips;
+		
+		private var m_viewers:int = -1;
+		
 		public function Player( channel:ChannelData ) 
 		{
 			m_channel	= channel;
@@ -71,6 +77,7 @@ package jp.ractius.ustrplite.player
 			
 			_initBackground();
 			_initCrostr();
+			_initSkin();
 			_initOverlay();
 			
 			m_windowMoveCtrl	= new WindowMoveController( m_overlay, m_windowBounds );
@@ -84,6 +91,11 @@ package jp.ractius.ustrplite.player
 			stage.addEventListener( FullScreenEvent.FULL_SCREEN, _onFullScreen );
 			
 			_onResize();
+		}
+		
+		private function _initSkin():void 
+		{
+			addChild( m_infoTips = new InfoTips( this ) );
 		}
 		
 		private function _onFullScreen( e:FullScreenEvent ):void 
@@ -154,6 +166,9 @@ package jp.ractius.ustrplite.player
 			m_sizeMod.applyTo( m_resizableFrame );
 			
 			m_sizeMod.applyTo( m_crostrDisp );
+			
+			m_infoTips.x = m_sizeMod.w - m_infoTips.width;
+			m_infoTips.y = m_sizeMod.h - m_infoTips.height;
 		}
 		
 		private function _initLocalSocket():void 
@@ -187,6 +202,7 @@ package jp.ractius.ustrplite.player
 		public function get sizeMod():SizeModule		{ return m_sizeMod; }
 		public function get volumeMod():VolumeModule	{ return m_volumeMod; }
 		public function get channel():ChannelData		{ return m_channel; }
+		public function get viewers():int				{ return m_viewers; }
 		private function get window():NativeWindow		{ return stage.nativeWindow; }
 		
 		public function updateAspectRatio( w:Number, h:Number ):void
@@ -243,6 +259,12 @@ package jp.ractius.ustrplite.player
 		{
 			var ary:Array = CsvUtil.parseCsv( data );
 			updateAspectRatio( ary[0], ary[1] );
+		}
+		
+		public function onViewersCros( data:String ):void
+		{
+			m_viewers = int( data );
+			dispatchEvent( new PlayerEvent( PlayerEvent.CHANGE_VIEWERS ) );
 		}
 		
 	}

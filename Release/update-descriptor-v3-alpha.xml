@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <update xmlns="http://ns.adobe.com/air/framework/update/description/2.5">
-	<versionNumber>2.99.4</versionNumber>
+	<versionNumber>2.99.40</versionNumber>
 	<versionLabel>ver.3 Alpha-4</versionLabel>
 	<url>http://ractis.rdy.jp/dl/download.cgi?name=UstrPLite3-Alpha4.air</url>
 	<description>開発版のため、不具合等が含まれている場合があります。</description>

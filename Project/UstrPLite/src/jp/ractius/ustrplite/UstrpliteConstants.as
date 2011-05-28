@@ -22,6 +22,10 @@ package jp.ractius.ustrplite
 		static public const BROWSER_SKIN_STD:String		= "browserSkinStd";
 		static public const BROWSER_SKIN_MINI:String	= "browserSkinMini";
 		
+		static public const CONFIG_WINDOW_BOUNDS:String	= "windowBounds";
+		static public const CONFIG_BROWSER:String		= "browser";
+		static public const CONFIG_FAVORITES:String		= "favorites";
+		
 		/**
 		 * @private
 		 */

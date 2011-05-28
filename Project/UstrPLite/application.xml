@@ -2,7 +2,7 @@
 <application xmlns="http://ns.adobe.com/air/application/2.6">
 	
 	<id>jp.ractius.ustrplite</id> 
-	<versionNumber>2.99.4</versionNumber> 
+	<versionNumber>2.99.40</versionNumber> 
 	<versionLabel>ver.3 Alpha-4</versionLabel>
 	<filename>UstrPLite</filename> 
 	
@@ -20,6 +20,8 @@
 		<maximizable>false</maximizable> 
 		<resizable>true</resizable> 
 	</initialWindow> 
+	
+	<allowBrowserInvocation>true</allowBrowserInvocation>
 	
 	<!-- 
 	More options:

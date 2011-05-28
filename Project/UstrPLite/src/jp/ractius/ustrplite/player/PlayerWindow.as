@@ -26,6 +26,8 @@ package jp.ractius.ustrplite.player
 			
 			super( opt );
 			
+			alwaysInFront = true;
+			
 			//TODO
 			width = 400;
 			height = 300;

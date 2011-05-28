@@ -41,7 +41,11 @@ package jp.ractius.ustrplite.crostr.ustream
 			}
 			
 			m_channel = m_logic.createChannel( channelId, /*autoPlay ="*/true, password );
+			
 			m_channel.addEventListener( "getStreamSize", _onGetStreamSize );
+			
+			if ( _modules )	_onCreateModules();
+			else			m_channel.addEventListener( "createModules", _onCreateModules );
 		}
 		
 		override protected function onRefresh():void 
@@ -49,11 +53,30 @@ package jp.ractius.ustrplite.crostr.ustream
 			onPlay();
 		}
 		
+		private function _onCreateModules( e:Event = null ):void 
+		{
+			if ( e ) e.currentTarget.removeEventListener( e.type, arguments.callee );
+			
+			_modules.addEventListener( "createViewers", _onCreateViewersModule );
+		}
+		
+		private function _onCreateViewersModule( e:Event ):void 
+		{
+			e.currentTarget.removeEventListener( e.type, arguments.callee );
+			
+			_modules.viewers.addEventListener( "update", function( e:Event ):void
+			{
+				sendViewers( uint( e.target.toString() ) );
+			} );
+		}
+		
 		private function _onGetStreamSize( e:Event ):void 
 		{
 			var bounds:Rectangle = m_channel.streamRect;
 			sendVideoSize( bounds.width, bounds.height );
 		}
+		
+		private function get _modules():Object { return m_channel.modules; }
 		
 	}
 	
