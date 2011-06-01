@@ -4,7 +4,9 @@
 	
 	<general>
 		<play>Play</play>
+		<fav>Favorites</fav>
 		<addFav>AddFav</addFav>
+		<addFavFull>Add to favorites</addFavFull>
 		<remFav>RemFav</remFav>
 		<showMenu>Show menu</showMenu>
 		<alwaysInFront>Always in front</alwaysInFront>
@@ -13,9 +15,20 @@
 	</general>
 	
 	<browser>
-		<miniMenu>
-			<switchSkin>Switch to browser mode</switchSkin>
-		</miniMenu>
+		<menu>
+			<fav>
+				<import>Import</import>
+				<export>Export</export>
+			</fav>
+			<switchToMini>Switch to mini mode</switchToMini>
+			<switchToBrowser>Switch to browser mode</switchToBrowser>
+		</menu>
+		<dialog>
+			<fav>
+				<import>Import favorites</import>
+				<export>Export favorites</export>
+			</fav>
+		</dialog>
 		<channel>
 			<remFav>Remove from favorites</remFav>
 		</channel>
@@ -29,23 +42,35 @@
 			</play>
 			<addFav>
 				<label>#general.addFav</label>
-				<toolTip>Add to favorites</toolTip>
+				<toolTip>#general.addFavFull</toolTip>
 			</addFav>
 		</control>
 	</browser>
 	
 	<player>
 		<menu>
+			<size>
+				<label>Size</label>
+				<scale>Scale</scale>
+			</size>
 			<window>
 				<label>Window</label>
 				<minimizeMute>Minimize and Mute</minimizeMute>
 				<fullscreen>Fullscreen</fullscreen>
 			</window>
+			<channel>
+				<label>Channel</label>
+				<isAlreadyFav>Is already favorite</isAlreadyFav>
+			</channel>
 			<refresh>Refresh</refresh>
 			<playInPopup>Play in official player</playInPopup>
 			<close>Close</close>
 		</menu>
 	</player>
+	
+	<fileType>
+		<fav>Favorites file</fav>
+	</fileType>
 	
 	<services>
 		<justintv>

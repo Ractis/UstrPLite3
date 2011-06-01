@@ -7,6 +7,7 @@ package jp.ractius.ustrplite.player
 	import flash.display.StageDisplayState;
 	import flash.events.Event;
 	import flash.events.FullScreenEvent;
+	import flash.geom.Rectangle;
 	import jp.ractius.ripple.air.WindowBounds;
 	import jp.ractius.ripple.air.WindowMoveController;
 	import jp.ractius.ripple.air.WindowResizeController;
@@ -15,11 +16,15 @@ package jp.ractius.ustrplite.player
 	import jp.ractius.ripple.display.resizableFrame.ResizableFrame;
 	import jp.ractius.ripple.net.LocalSocket;
 	import jp.ractius.ripple.utils.CsvUtil;
+	import jp.ractius.ustrplite.configs.ConfigManager;
+	import jp.ractius.ustrplite.configs.PlayerConfig;
 	import jp.ractius.ustrplite.data.channel.ChannelData;
+	import jp.ractius.ustrplite.data.favorite.FavoriteStore;
 	import jp.ractius.ustrplite.events.ChannelEvent;
 	import jp.ractius.ustrplite.events.PlayerEvent;
 	import jp.ractius.ustrplite.events.ResizeEvent;
 	import jp.ractius.ustrplite.events.VolumeEvent;
+	import jp.ractius.ustrplite.player.modules.FullScreenMouseModule;
 	import jp.ractius.ustrplite.player.modules.InputModule;
 	import jp.ractius.ustrplite.player.modules.MenuModule;
 	import jp.ractius.ustrplite.player.modules.SizeModule;
@@ -51,6 +56,7 @@ package jp.ractius.ustrplite.player
 		private var m_volumeMod:VolumeModule;
 		private var m_inputMod:InputModule;
 		private var m_menuMod:MenuModule;
+		private var m_fsMouseMod:FullScreenMouseModule;
 		
 		private var m_background:Shape;
 		private var m_crostrDisp:CrostrDisp;
@@ -84,13 +90,55 @@ package jp.ractius.ustrplite.player
 			
 			addChild( m_resizableFrame );
 			
+			_loadConfig();
+			
 			m_option.onInitialized();
 			
 			m_sizeMod.addEventListener( ResizeEvent.RESIZE, _onResize );
 			m_volumeMod.addEventListener( VolumeEvent.CHANGE_VOLUME, _setVolume );
 			stage.addEventListener( FullScreenEvent.FULL_SCREEN, _onFullScreen );
+			stage.nativeWindow.addEventListener( Event.CLOSE, _saveConfig );
 			
 			_onResize();
+		}
+		
+		private function _anotherARBounds( src:Rectangle, aspectRatio:Number ):Rectangle
+		{
+			var prefH:Number = Math.round( src.width / aspectRatio );
+			var gapH:Number	 = prefH - src.height;
+			
+			var dst:Rectangle = src.clone();
+			dst.y		-= Math.round( gapH / 2 );
+			dst.height	+= gapH;
+			
+			return dst;
+		}
+		
+		private function _loadConfig():void
+		{
+			var cfg:PlayerConfig = _config;
+			
+			stage.nativeWindow.alwaysInFront = cfg.alwaysInFront;
+			
+			if ( cfg.windowBounds )
+			{
+				m_windowBounds.bounds = _anotherARBounds( cfg.windowBounds, m_windowResizeCtrl.aspectRatio );
+			}
+		}
+		
+		private function _saveConfig( ...e ):void 
+		{
+			var cfg:PlayerConfig = _config;
+			
+			cfg.alwaysInFront	= stage.nativeWindow.alwaysInFront;
+			cfg.windowBounds	= _anotherARBounds( m_windowBounds.bounds, 4 / 3 );
+			
+			cfg.save();
+		}
+		
+		private function get _config():PlayerConfig
+		{
+			return PlayerConfig( ConfigManager.getConfig( UstrpliteConstants.CONFIG_PLAYER ) );
 		}
 		
 		private function _initSkin():void 
@@ -117,6 +165,8 @@ package jp.ractius.ustrplite.player
 				setSize( m_background );
 				setSize( m_overlay );
 				setSize( m_crostrDisp );
+				
+				_updateInfoTipsPos( sw, sh );
 			}
 			else
 			{
@@ -167,8 +217,13 @@ package jp.ractius.ustrplite.player
 			
 			m_sizeMod.applyTo( m_crostrDisp );
 			
-			m_infoTips.x = m_sizeMod.w - m_infoTips.width;
-			m_infoTips.y = m_sizeMod.h - m_infoTips.height;
+			_updateInfoTipsPos( m_sizeMod.w, m_sizeMod.h );
+		}
+		
+		private function _updateInfoTipsPos( w:Number, h:Number ):void
+		{
+			m_infoTips.x = w - m_infoTips.width;
+			m_infoTips.y = h - m_infoTips.height;
 		}
 		
 		private function _initLocalSocket():void 
@@ -180,10 +235,11 @@ package jp.ractius.ustrplite.player
 		
 		private function _initModules():void 
 		{
-			m_sizeMod	= new SizeModule( m_windowBounds );
-			m_volumeMod	= new VolumeModule();
-			m_inputMod	= new InputModule( this );
-			m_menuMod	= new MenuModule( this, m_option );
+			m_sizeMod		= new SizeModule( m_windowBounds );
+			m_volumeMod		= new VolumeModule();
+			m_inputMod		= new InputModule( this );
+			m_menuMod		= new MenuModule( this, m_option );
+			m_fsMouseMod	= new FullScreenMouseModule( this );
 		}
 		
 		private function _playChannel( ...e ):void
@@ -205,9 +261,10 @@ package jp.ractius.ustrplite.player
 		public function get viewers():int				{ return m_viewers; }
 		private function get window():NativeWindow		{ return stage.nativeWindow; }
 		
-		public function updateAspectRatio( w:Number, h:Number ):void
+		public function setVideoSize( w:Number, h:Number ):void
 		{
 			m_windowResizeCtrl.aspectRatio = w / h;
+			m_sizeMod.setVideoSize( w, h );
 		}
 		
 		public function refresh( ...e ):void 
@@ -231,10 +288,16 @@ package jp.ractius.ustrplite.player
 			window.minimize();
 		}
 		
-		public function toggleFullscreen( ...e ):void
+		public function addFav( ...e ):void
 		{
-			if ( stage.displayState == StageDisplayState.NORMAL )	stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
-			else													stage.displayState = StageDisplayState.NORMAL;
+			FavoriteStore.inst.addFav( m_channel );
+		}
+		
+		public function get isFullscreen():Boolean { return stage.displayState != StageDisplayState.NORMAL; }
+		
+		public function set isFullscreen( value:Boolean ):void
+		{
+			stage.displayState = value ? StageDisplayState.FULL_SCREEN_INTERACTIVE : StageDisplayState.NORMAL;
 		}
 		
 		//------------------------------------------------------------------------------
@@ -258,7 +321,7 @@ package jp.ractius.ustrplite.player
 		public function onVideoSizeCros( data:String ):void
 		{
 			var ary:Array = CsvUtil.parseCsv( data );
-			updateAspectRatio( ary[0], ary[1] );
+			setVideoSize( ary[0], ary[1] );
 		}
 		
 		public function onViewersCros( data:String ):void

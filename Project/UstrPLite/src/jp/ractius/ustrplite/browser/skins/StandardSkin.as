@@ -15,7 +15,7 @@ package jp.ractius.ustrplite.browser.skins
 		
 		public function StandardSkin( stage:Stage ) 
 		{
-			super( stage );
+			super( stage, NAME );
 		}
 		
 		override protected function createPanel():JPanel 

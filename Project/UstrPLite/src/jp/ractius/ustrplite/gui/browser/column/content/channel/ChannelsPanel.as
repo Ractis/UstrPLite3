@@ -7,6 +7,7 @@ package jp.ractius.ustrplite.gui.browser.column.content.channel
 	import jp.ractius.ustrplite.data.playing.PlayingStore;
 	import org.aswing.event.ContainerEvent;
 	import org.aswing.FlowLayout;
+	import org.aswing.geom.IntDimension;
 	import org.aswing.GridLayout;
 	import org.aswing.JPanel;
 	
@@ -33,12 +34,15 @@ package jp.ractius.ustrplite.gui.browser.column.content.channel
 			
 		//	GuiUtil.drawDebugBorder( m_gridPanel )
 			
-			m_gridPanel.addEventListener( ContainerEvent.COM_REMOVED, _updatePrefferedSize );
+			m_gridPanel.addEventListener( ContainerEvent.COM_ADDED,		_updatePrefferedSize );
+			m_gridPanel.addEventListener( ContainerEvent.COM_REMOVED,	_updatePrefferedSize );
 		}
 		
 		private function _updatePrefferedSize( ...e ):void
 		{
-			setPreferredSize( m_gridPanel.getPreferredSize() );
+			var size:IntDimension = m_gridLayout.preferredLayoutSize( m_gridPanel );
+			m_gridPanel.setPreferredSize( size );
+			setPreferredSize( size );
 		}
 		
 		override public function setPreferredWidth( preferredWidth:int ):void 
@@ -65,7 +69,7 @@ package jp.ractius.ustrplite.gui.browser.column.content.channel
 			
 			panel.contextMenu = menu;
 			
-			gridPanel.append( panel );
+			m_gridPanel.append( panel );
 			
 			return panel;
 		}

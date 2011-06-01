@@ -38,6 +38,8 @@ package jp.ractius.ustrplite.data.playing
 		 */
 		public function play( channel:ChannelData ):Boolean
 		{
+			if ( !channel ) return false;
+			
 			var uri:String = channel.uri;
 			
 			var playerWin:PlayerWindow = m_players[ uri ];

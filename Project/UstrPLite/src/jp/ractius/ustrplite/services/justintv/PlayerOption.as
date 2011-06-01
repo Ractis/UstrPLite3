@@ -51,7 +51,7 @@ package jp.ractius.ustrplite.services.justintv
 			var videoSize:Point = channel.getExData( ChannelExDataName.VIDEO_SIZE ) as Point;
 			if ( !videoSize ) return;
 			
-			player.updateAspectRatio( videoSize.x, videoSize.y );
+			player.setVideoSize( videoSize.x, videoSize.y );
 		}
 		
 		private function get _topUrl():String

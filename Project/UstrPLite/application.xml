@@ -2,8 +2,8 @@
 <application xmlns="http://ns.adobe.com/air/application/2.6">
 	
 	<id>jp.ractius.ustrplite</id> 
-	<versionNumber>2.99.40</versionNumber> 
-	<versionLabel>ver.3 Alpha-4</versionLabel>
+	<versionNumber>2.99.52</versionNumber> 
+	<versionLabel>Ver.3 Alpha-5+Fix2</versionLabel>
 	<filename>UstrPLite</filename> 
 	
 	<name>UstrPLite 3 Alpha</name> 
@@ -15,13 +15,20 @@
 		<content>bin/UstrPLite.swf</content> 
 		<systemChrome>none</systemChrome> 
 		<transparent>true</transparent> 
-		<visible>true</visible> 
+		<visible>false</visible> 
 		<minimizable>true</minimizable> 
 		<maximizable>false</maximizable> 
 		<resizable>true</resizable> 
 	</initialWindow> 
 	
 	<allowBrowserInvocation>true</allowBrowserInvocation>
+	
+	<icon>
+		<image16x16>icons/ustrplite16.png</image16x16>
+		<image32x32>icons/ustrplite32.png</image32x32>
+		<image48x48>icons/ustrplite48.png</image48x48>
+		<image128x128>icons/ustrplite128.png</image128x128>
+	</icon>
 	
 	<!-- 
 	More options:

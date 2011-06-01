@@ -40,6 +40,16 @@ package jp.ractius.ripple.utils
 		
 		static public function getData( name:String ):Object
 		{
+			if ( name == "" )
+			{
+				return "";
+			}
+			
+			if ( name.charAt( 0 ) == "!" )
+			{
+				return name.substr( 1 );
+			}
+			
 			var data:Object = _getDataImpl( s_data, name.split( "." ) );
 			
 			var dataString:String = String( data );

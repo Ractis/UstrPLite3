@@ -1,12 +1,13 @@
 package jp.ractius.ripple.air 
 {
 	import flash.display.NativeMenuItem;
+	import flash.events.Event;
 	
 	/**
 	 * ...
 	 * @author ractis
 	 */
-	internal class RNativeMenuToggleItem extends NativeMenuItem 
+	public class RNativeMenuToggleItem extends NativeMenuItem 
 	{
 		private var m_tgt:Object;
 		private var m_name:String;
@@ -15,13 +16,19 @@ package jp.ractius.ripple.air
 		{
 			m_tgt	= tgt;
 			m_name	= name;
+			
+			addEventListener( Event.PREPARING, _update );
 		}
 		
-		public function toggle():Boolean
+		internal function toggle( ...e ):void
 		{
 			var toggle:Boolean = m_tgt[ m_name ] = !m_tgt[ m_name ];
 			checked = toggle;
-			return toggle;
+		}
+		
+		private function _update( ...e ):void
+		{
+			checked = m_tgt[ m_name ];
 		}
 		
 	}

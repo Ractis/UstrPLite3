@@ -1,5 +1,6 @@
 package jp.ractius.ustrplite.configs 
 {
+	import jp.ractius.ustrplite.browser.Browser;
 	import jp.ractius.ustrplite.data.channel.ChannelData;
 	import jp.ractius.ustrplite.data.channel.ChannelStore;
 	import jp.ractius.ustrplite.data.favorite.FavoriteStore;
@@ -26,15 +27,7 @@ package jp.ractius.ustrplite.configs
 		{
 			var chData:ChannelData = e.favorite.channel;
 			
-			var sv:Object = xml.service.( name == chData.serviceName );
-			
-			if ( sv.length() == 0 )
-			{
-				sv = new XMLList( "<service><name>" + chData.serviceName + "</name></service>" );
-				xml.appendChild( sv );
-			}
-			
-			sv.appendChild( new XML( "<channel><name>" + chData.channelName + "</name></channel>" ) );
+			_channels[ chData.uri ] = new Object();
 			
 			save();
 		}
@@ -43,23 +36,27 @@ package jp.ractius.ustrplite.configs
 		{
 			var chData:ChannelData = e.favorite.channel;
 			
-			var sv:XML = xml.service.( name == chData.serviceName )[0];
-			
-			delete sv.channel.( name == chData.channelName )[0];
-			if ( sv.channel.length() == 0 ) delete sv.(true)[0];
+			_channels[ chData.uri ] = null;
 			
 			save();
 		}
 		
 		override internal function onLoad():void 
 		{
-			for each ( var sv:Object in xml.service )
+			for ( var chUri:String in _channels )
 			{
-				for each ( var ch:Object in sv.channel )
-				{
-					FavoriteStore.inst.addFav( ChannelStore.inst.getChannel( sv.name, ch.name ) );
-				}
+				FavoriteStore.inst.addFav( ChannelStore.inst.getChannelByUri( chUri ) );
 			}
+		}
+		
+		private function get _channels():Object
+		{
+			if ( !data.channels )
+			{
+				data.channels = new Object();
+			}
+			
+			return data.channels;
 		}
 		
 		private function _registerRemFavListener( e:FavoriteEvent ):void

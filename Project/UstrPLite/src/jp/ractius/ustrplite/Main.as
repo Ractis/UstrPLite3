@@ -40,19 +40,22 @@ package jp.ractius.ustrplite
 			UIManager.setLookAndFeel( new RLookAndFeel() );
 			
 			addChild( Browser.inst );
-			Browser.inst.changeSkin( UstrpliteConstants.BROWSER_SKIN_STD );
+			
+			NativeApplication.nativeApplication.addEventListener( InvokeEvent.INVOKE, _onInvoke );
 			
 			_initUpdater();
 			_executeTimer();
-			
-			NativeApplication.nativeApplication.addEventListener( InvokeEvent.INVOKE, _onInvoke );
 		}
 		
 		private function _onInvoke( e:InvokeEvent ):void 
 		{
-			if ( e.arguments.length == 0 ) return;
+			if ( e.arguments.length == 0 )
+			{
+				stage.nativeWindow.visible = true;
+				return;
+			}
 			
-			Browser.inst.play( e.arguments[0] );
+			Browser.inst.play( e.arguments[0], true );
 		}
 		
 		private function _executeTimer():void 

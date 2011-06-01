@@ -19,9 +19,6 @@ package jp.ractius.ustrplite.player
 		
 		public function CrostrDisp( name:String, sessionId:String, isRemote:Boolean ) 
 		{
-			var url:String = isRemote ? CROSTR_DIR_REMOTE : CROSTR_DIR_LOCAL;
-			url += "crostr.html?" + name + "&" + sessionId;
-			
 			m_loader = new HTMLLoader();
 			m_loader.paintsDefaultBackground = false;
 			m_loader.load( new URLRequest( _genCrostrUrl( name, sessionId, isRemote ) ) );

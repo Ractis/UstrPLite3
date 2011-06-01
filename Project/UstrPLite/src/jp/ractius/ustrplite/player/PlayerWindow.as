@@ -29,8 +29,8 @@ package jp.ractius.ustrplite.player
 			alwaysInFront = true;
 			
 			//TODO
-			width = 400;
-			height = 300;
+			width	= 400;
+			height	= 300;
 			
 			stage.addChild( new Player( channel ) );
 			

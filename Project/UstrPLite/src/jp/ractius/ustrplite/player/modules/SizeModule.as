@@ -17,6 +17,12 @@ package jp.ractius.ustrplite.player.modules
 		private var m_w:uint;
 		private var m_h:uint;
 		
+		private var m_videoW:uint = 0;
+		private var m_videoH:uint = 0;
+		
+		private var m_isChangeScale:Boolean = false;
+		private var m_scale:Number;
+		
 		public function SizeModule( bounds:WindowBounds ) 
 		{
 			m_bounds = bounds;
@@ -35,6 +41,8 @@ package jp.ractius.ustrplite.player.modules
 		{
 			_copyFromBounds();
 			
+			m_isChangeScale = false;
+			
 			_fireResizeEvent();
 		}
 		
@@ -42,6 +50,16 @@ package jp.ractius.ustrplite.player.modules
 		{
 			m_bounds.setSize( w, h );
 			m_bounds.commit();
+		}
+		
+		public function setScale( scale:Number ):void
+		{
+			m_scale = scale;
+			m_isChangeScale = true;
+			
+			if ( m_videoW == 0 || m_videoH == 0 ) return;
+			
+			setSize( m_videoW * scale, m_videoH * scale );
 		}
 		
 		/**
@@ -71,6 +89,17 @@ package jp.ractius.ustrplite.player.modules
 			_apply();
 		}
 		
+		public function setVideoSize( w:Number, h:Number ):void 
+		{
+			m_videoW = w;
+			m_videoH = h;
+			
+			if ( m_isChangeScale )
+			{
+				setScale( m_scale );
+			}
+		}
+		
 		private function _enlargeImpl():void 
 		{
 			//TODO 
@@ -83,7 +112,7 @@ package jp.ractius.ustrplite.player.modules
 		
 		private function _apply():void 
 		{
-			//TODO
+			setSize( m_w, m_h );
 		}
 		
 		public function get w():uint { return m_w; }

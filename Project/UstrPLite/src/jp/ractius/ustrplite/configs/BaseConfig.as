@@ -7,12 +7,12 @@ package jp.ractius.ustrplite.configs
 	public class BaseConfig 
 	{
 		private var m_cfgName:String;
-		private var m_xml:XML;
+		internal var data:Object;
 		
 		public function BaseConfig( cfgName:String ) 
 		{
 			m_cfgName	= cfgName;
-			m_xml		= new XML( "<" + cfgName + "></" + cfgName + ">" );
+			data		= new Object();
 			
 			ConfigManager.load( this );
 		}
@@ -28,13 +28,6 @@ package jp.ractius.ustrplite.configs
 		}
 		
 		public function get cfgName():String { return m_cfgName; }
-		
-		internal function get xml():XML { return m_xml; }
-		
-		internal function set xml(value:XML):void 
-		{
-			m_xml = value;
-		}
 		
 	}
 

@@ -2,6 +2,7 @@ package jp.ractius.ustrplite.crostr.justintv
 {
 	import flash.display.DisplayObject;
 	import flash.events.Event;
+	import flash.events.FullScreenEvent;
 	import jp.ractius.ustrplite.crostr.BaseLoadRslCrostr;
 	
 	/**
@@ -10,7 +11,8 @@ package jp.ractius.ustrplite.crostr.justintv
 	 */
 	public class Main extends BaseLoadRslCrostr 
 	{
-		static private const API_KEY:String = "";
+		static private const API_KEY:String = "";	// for Release
+	//	static private const API_KEY:String = "";	// for Develop
 		
 		static private const DEFAULT_WIDTH:Number	= 480;
 		static private const DEFAULT_HEIGHT:Number	= 360;
@@ -92,10 +94,20 @@ package jp.ractius.ustrplite.crostr.justintv
 				m_content.x = ( h * ar - w ) / 2;
 				m_content.y = 0;
 			}
+			else						// 4:3
+			{
+				m_content.x = 0;
+				m_content.y = 0;
+			}
 			
+			_setSize( w, h );
+			_setSize( w, h );	// 一定以上のデルタサイズだと、正しくリサイズ出来ない問題の対策
+		}
+		
+		private function _setSize( w:Number, h:Number ):void
+		{
 			m_content.width  = w;
 			m_content.height = h;
-			m_api.resize_player( w, h );
 		}
 		
 		override protected function onPlay():void 

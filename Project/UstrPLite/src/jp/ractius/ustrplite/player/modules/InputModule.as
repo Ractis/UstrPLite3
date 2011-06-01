@@ -17,7 +17,8 @@ package jp.ractius.ustrplite.player.modules
 		private var m_volume:VolumeModule;
 		private var m_window:NativeWindow;
 		
-		private var m_isCtrlKey:Boolean = false;
+		private var m_isCtrlKey:Boolean		= false;
+		private var m_isShiftKey:Boolean	= false;
 		
 		private var m_vicViper:uint = 0;
 		
@@ -52,12 +53,14 @@ package jp.ractius.ustrplite.player.modules
 				n = e.delta > 0 ? 1 : -1;
 			}
 			
-			m_volume.add5( n );
+			if ( m_isShiftKey )	m_volume.volume += n;
+			else				m_volume.add5( n );
 		}
 		
 		private function _updateModKey( e:KeyboardEvent ):void 
 		{
-			m_isCtrlKey	= e.ctrlKey;
+			m_isCtrlKey		= e.ctrlKey;
+			m_isShiftKey	= e.shiftKey;
 		}
 		
 		private function _onKeyDown( e:KeyboardEvent ):void 
@@ -66,6 +69,13 @@ package jp.ractius.ustrplite.player.modules
 			
 			switch ( e.keyCode )
 			{
+			case Keyboard.UP:
+				m_volume.add5( 1 );
+				break;
+				
+			case Keyboard.DOWN:
+				m_volume.add5( -1 );
+				break;
 			}
 			
 			//TODO ﾐｿ-

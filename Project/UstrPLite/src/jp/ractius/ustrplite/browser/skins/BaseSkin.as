@@ -24,6 +24,8 @@ package jp.ractius.ustrplite.browser.skins
 		static private const SHADOW_DIST:Number		= 5;
 		static private const CORNER_RADIUS:Number	= 7.5;
 		
+		private var m_name:String;
+		
 		private var m_shadow:RoundRectShadowSprite;
 		private var m_panelMask:DisplayObject;
 		private var m_panel:JPanel;
@@ -32,13 +34,15 @@ package jp.ractius.ustrplite.browser.skins
 		private var m_windowBounds:WindowBounds;
 		private var m_windowResizeCtrl:WindowResizeController;
 		
-		public function BaseSkin( stage:Stage ) 
+		public function BaseSkin( stage:Stage, name:String ) 
 		{
 			x = SHADOW_SIZE;
 			y = SHADOW_SIZE - SHADOW_DIST;
 			
+			m_name = name;
+			
 			// init WindowBounds
-			m_windowBounds = new WindowBounds( stage );
+			m_windowBounds = new WindowBounds( stage, false );
 			
 			// init Shadow
 			m_shadow = new RoundRectShadowSprite( CORNER_RADIUS, SHADOW_SIZE, SHADOW_DIST );
@@ -64,10 +68,18 @@ package jp.ractius.ustrplite.browser.skins
 			_onResizing();
 			
 			addEventListener( Event.ADDED_TO_STAGE, _onAddToStage );
+			addEventListener( Event.REMOVED_FROM_STAGE, _onRemoveFromStage );
+		}
+		
+		private function _onRemoveFromStage( e:Event ):void 
+		{
+			m_windowBounds.deactivate();
 		}
 		
 		private function _onAddToStage( e:Event ):void 
 		{
+			m_windowBounds.activate();
+			
 			GuiUtil.initLayout( m_panel );
 			_onResizing();
 		//	m_panel.revalidateIfNecessary();
@@ -81,16 +93,6 @@ package jp.ractius.ustrplite.browser.skins
 		{
 			// override me
 			return new JPanel();
-		}
-		
-		protected function onMinimize( ...e ):void
-		{
-			stage.nativeWindow.minimize();
-		}
-		
-		protected function onExit( ...e ):void
-		{
-			stage.nativeWindow.close();
 		}
 		
 		private function _onResizing( e:WindowBoundsEvent = null ):void 
@@ -110,6 +112,11 @@ package jp.ractius.ustrplite.browser.skins
 			
 			m_panel.setSizeWH( panelW, panelH );
 			m_panel.revalidate();
+		}
+		
+		public function get skinName():String
+		{
+			return m_name;
 		}
 		
 	}

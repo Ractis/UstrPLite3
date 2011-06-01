@@ -42,6 +42,8 @@ package jp.ractius.ustrplite.services.common
 		
 		public function test( uri:String ):Boolean 
 		{
+			var uriLowerCase:String = uri.toLowerCase();
+			
 			m_channelName = null;
 			
 			var testImpl:Function = function( isPrefix:Boolean ):Boolean
@@ -49,7 +51,8 @@ package jp.ractius.ustrplite.services.common
 				for each ( var val:String in isPrefix ? m_prefixes : m_patterns )
 				{
 					val += "/";
-					var idx:int = uri.indexOf( val );
+					
+					var idx:int = uriLowerCase.indexOf( val );
 					
 					if ( isPrefix )
 					{

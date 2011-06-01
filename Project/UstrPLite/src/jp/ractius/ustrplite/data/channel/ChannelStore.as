@@ -2,6 +2,8 @@ package jp.ractius.ustrplite.data.channel
 {
 	import flash.utils.Dictionary;
 	import jp.ractius.ustrplite.services.IChannelQuery;
+	import jp.ractius.ustrplite.services.IChannelUri;
+	import jp.ractius.ustrplite.services.IService;
 	import jp.ractius.ustrplite.services.Services;
 	
 	/**
@@ -27,6 +29,26 @@ package jp.ractius.ustrplite.data.channel
 			}
 			
 			return  s_inst;
+		}
+		
+		public function getChannelByUri( url:String ):ChannelData
+		{
+			var uri:IChannelUri;
+			Services.forEach( function( service:IService ):Boolean
+			{
+				uri = service.createChannelUri();
+				
+				if ( uri.test( url ) )	return false;	// サービスが見つかった
+				else					return true;	// 見つからないので続行
+			} );
+			
+			if ( !uri.channelName )
+			{
+				// 見つからなかった
+				return null;
+			}
+			
+			return getChannel( uri.serviceName, uri.channelName );
 		}
 		
 		public function getChannel( serviceName:String, channelName:String ):ChannelData

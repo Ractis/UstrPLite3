@@ -6,7 +6,6 @@ package jp.ractius.ustrplite.gui.browser.miniMenu
 	import jp.ractius.ripple.gui.buttons.RButton;
 	import jp.ractius.ripple.gui.buttons.RButtonModel;
 	import jp.ractius.ustrplite.browser.Browser;
-	import jp.ractius.ustrplite.browser.skins.MiniSkin;
 	import org.aswing.geom.IntDimension;
 	import org.aswing.geom.IntRectangle;
 	
@@ -40,7 +39,7 @@ package jp.ractius.ustrplite.gui.browser.miniMenu
 		
 		private function _onClick( e:MouseEvent ):void 
 		{
-			MiniSkin( Browser.inst.getSkin( MiniSkin.NAME ) ).showMenu( e.stageX, e.stageY );
+			Browser.inst.showMenu( e.stageX, e.stageY );
 		}
 		
 		override protected function paint( b:IntRectangle ):void 

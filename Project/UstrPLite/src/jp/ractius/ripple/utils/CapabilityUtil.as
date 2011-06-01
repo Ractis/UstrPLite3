@@ -1,5 +1,6 @@
 package jp.ractius.ripple.utils 
 {
+	import flash.desktop.NativeApplication;
 	import flash.system.Capabilities;
 	/**
 	 * ...
@@ -16,6 +17,12 @@ package jp.ractius.ripple.utils
 		static public function get isMac():Boolean
 		{
 			return ( Capabilities.os.indexOf( "Mac" ) >= 0 );
+		}
+		
+		static public function get isSupportNativeAppIcon():Boolean
+		{
+			return NativeApplication.supportsDockIcon ||
+				   NativeApplication.supportsSystemTrayIcon;
 		}
 		
 	}

@@ -22,6 +22,10 @@ package jp.ractius.ustrplite.crostr.livetube
 		private var m_netConnection:NetConnection;
 		private var m_netStream:NetStream;
 		
+		private var m_aspectRatio:Number = 4 / 3;
+		private var m_screenW:Number = 480;
+		private var m_screenH:Number = 360;
+		
 		public function LivetubePlayer( streamUrl:String ) 
 		{
 			super( 480, 360 );
@@ -89,7 +93,51 @@ package jp.ractius.ustrplite.crostr.livetube
 		
 		private function _onMetaDataNS( data:Object ):void 
 		{
-			dispatchEvent( new VideoSizeEvent( data.width, data.height ) );
+			var w:Number = data.width;
+			var h:Number = data.height;
+			
+			m_aspectRatio = w / h;
+			_centering();
+			
+			dispatchEvent( new VideoSizeEvent( w, h ) );
+		}
+		
+		override public function set width( w:Number ):void
+		{
+			m_screenW = w;
+			
+			_centering();
+		}
+		
+		override public function set height( h:Number ):void
+		{
+			m_screenH = h;
+			
+			_centering();
+		}
+		
+		private function _centering():void
+		{
+			var currentAR:Number = m_screenW / m_screenH;
+			
+			if		( currentAR < m_aspectRatio )	// 上下に黒枠
+			{
+				super.width		= m_screenW;
+				super.height	= width / m_aspectRatio;
+			}
+			else if	( currentAR > m_aspectRatio )	// 左右に黒枠
+			{
+				super.height	= m_screenH;
+				super.width		= height * m_aspectRatio;
+			}
+			else
+			{
+				super.width		= m_screenW;
+				super.height	= m_screenH;
+			}
+			
+			x = ( m_screenW - width  ) / 2;
+			y = ( m_screenH - height ) / 2;
 		}
 		
 	}

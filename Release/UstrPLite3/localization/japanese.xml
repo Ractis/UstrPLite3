@@ -4,7 +4,9 @@
 	
 	<general>
 		<play>再生</play>
+		<fav>お気に入り</fav>
 		<addFav>登録</addFav>
+		<addFavFull>お気に入りに登録</addFavFull>
 		<remFav>削除</remFav>
 		<showMenu>メニューを表示</showMenu>
 		<alwaysInFront>常に最前面表示</alwaysInFront>
@@ -13,9 +15,20 @@
 	</general>
 	
 	<browser>
-		<miniMenu>
-			<switchSkin>ブラウザモードに切り替え</switchSkin>
-		</miniMenu>
+		<menu>
+			<fav>
+				<import>インポート</import>
+				<export>エクスポート</export>
+			</fav>
+			<switchToMini>ミニモードに切り替え</switchToMini>
+			<switchToBrowser>ブラウザモードに切り替え</switchToBrowser>
+		</menu>
+		<dialog>
+			<fav>
+				<import>お気に入りをインポート</import>
+				<export>お気に入りをエクスポート</export>
+			</fav>
+		</dialog>
 		<channel>
 			<remFav>お気に入りから削除</remFav>
 		</channel>
@@ -29,23 +42,35 @@
 			</play>
 			<addFav>
 				<label>#general.addFav</label>
-				<toolTip>お気に入りに登録</toolTip>
+				<toolTip>#general.addFavFull</toolTip>
 			</addFav>
 		</control>
 	</browser>
 	
 	<player>
 		<menu>
+			<size>
+				<label>サイズ</label>
+				<scale>拡大率</scale>
+			</size>
 			<window>
 				<label>ウィンドウ</label>
 				<minimizeMute>最小化してミュート</minimizeMute>
 				<fullscreen>フルスクリーン</fullscreen>
 			</window>
+			<channel>
+				<label>チャンネル</label>
+				<isAlreadyFav>お気に入りに登録済み</isAlreadyFav>
+			</channel>
 			<refresh>更新（再接続）</refresh>
 			<playInPopup>公式プレイヤーで再生</playInPopup>
 			<close>プレイヤーを閉じる</close>
 		</menu>
 	</player>
+	
+	<fileType>
+		<fav>お気に入りファイル</fav>
+	</fileType>
 	
 	<services>
 		<justintv>

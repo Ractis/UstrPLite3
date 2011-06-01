@@ -37,14 +37,8 @@ package jp.ractius.ripple.air
 		public function appendToggleItem( name:String, tgt:Object, tgtProperty:String, key:String = "", isCrtl:Boolean = false, isShift:Boolean = false ):RNativeMenuToggleItem
 		{
 			var item:RNativeMenuToggleItem = new RNativeMenuToggleItem( tgt, tgtProperty );
-			_appendImpl( item, name, _onSelectToggle, key, isCrtl, isShift );
+			_appendImpl( item, name, item.toggle, key, isCrtl, isShift );
 			return item;
-		}
-		
-		private function _onSelectToggle( e:Event ):void 
-		{
-			var item:RNativeMenuToggleItem = RNativeMenuToggleItem( e.target );
-			item.toggle();
 		}
 		
 		private function _appendImpl( item:NativeMenuItem, name:String, listener:Function, key:String, isCtrl:Boolean, isShift:Boolean ):void
